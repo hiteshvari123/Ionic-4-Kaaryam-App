@@ -1,0 +1,7 @@
+{
+  "name": "karyam_margdarshak",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

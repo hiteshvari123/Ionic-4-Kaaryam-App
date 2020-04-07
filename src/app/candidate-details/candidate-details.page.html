@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+    <ion-title class="customColor">{{'candidte-details.title'|translate}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="view-candidate" class="customColor"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngClass]="isLoading ? 'loader' : 'no_loader'">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+
+    <ion-row>
+      <ion-col>
+         {{'candidte-details.Name'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.firstName}} {{candidateData?.lastName}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         {{'candidte-details.Address'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.address1}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         {{'candidte-details.Email'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.emailId}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Contact No'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.contactNo}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         {{'candidte-details.Education'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.highestEducation}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         {{'candidte-details.Taluka'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.taluka}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Interest in Study'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.interestStudy}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Interest in Work'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.interestWork}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Self Employment'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.SelfEmployment}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Training Details'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.TrainingName}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Prefered Location'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.Preferedlocation}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Test Status'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.teststatus}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Total Experience'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.totalExp}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        {{'candidte-details.Session Status'|translate}}:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{candidateData?.SessionStastus}}</span> 
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-row *ngIf="!isLoading">
+    <ion-col>
+      <ion-button class="btn" type="submit"  expand="block" (click)="getReport()">{{'candidte-details.Report'|translate}} <ion-spinner name="dots" *ngIf="isCalling" class="loader"></ion-spinner></ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button class="btn"  type="submit"  expand="block" (click)="getGraphReport()">{{'candidte-details.Graph'|translate}} <ion-spinner name="dots" *ngIf="isCalling1" class="loader"></ion-spinner></ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="rowWithBtn" *ngIf="!isLoading">
+    <ion-button class="btn" type="submit"  expand="block" (click)="goToUpdateSession()">{{'candidte-details.Update session status'|translate}} </ion-button>
+  </ion-row>
+
+</ion-content>

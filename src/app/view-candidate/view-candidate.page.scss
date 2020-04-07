@@ -1,0 +1,71 @@
+.ios,.md{
+
+    .customToolbar{
+        // --ion-toolbar-background: linear-gradient(
+        //     to right,
+        //     rgb(37, 131, 199) 0%,
+        //     rgba(49, 191, 169, 1) 90%,
+        //     rgba(49, 191, 169, 1) 100%
+        //   );
+          --ion-toolbar-background: linear-gradient( to right, rgb(243, 130, 5) 0%, rgba(239, 172, 101, 0.89) 90%, rgb(242, 182, 118) 100% );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .mainCard{
+        border-top: 1px solid;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-image: linear-gradient(to right,rgb(37, 131, 199) 0%,
+        rgba(49, 191, 169, 1) 90%,
+        rgba(49, 191, 169, 1) 100% ) 1;
+        border-radius: 5px;
+    }
+
+    .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        height: 105%;
+    }
+    .no_loader {
+        display: none;
+        height: 0%;
+    }
+    .infoDiv{
+        padding: 10px 0px 0px 20px;
+        border-bottom: 0.55px solid lightgray;
+    }
+    .nameDiv{
+        font-size: 13px;
+        font-weight: 900;
+    }
+    .contactNo{
+        color: #5a5a5a;
+        margin-bottom: 0px;
+        font-size: 12px;
+    }
+    .contactEmail{
+        color: #5a5a5a;
+        margin-top: 0px;
+        font-size: 12px;
+    }
+    .searchBtn{
+        background: transparent;
+    }
+    .searchIcon{
+        font-size: 18px;
+        color: #ffffff;
+    }
+    .noDataDiv{
+        text-align: center;
+        transform: translateY(200%);
+    }
+    .noDataImg{
+        width: 50px;
+    }
+    .noDataMsg{
+        font-size: 15px;
+    }
+}

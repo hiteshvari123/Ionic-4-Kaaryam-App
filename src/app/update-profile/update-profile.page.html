@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+    <ion-title class="customColor">{{'update-profile.title'|translate}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="my-profile" class="customColor"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateProfileForm" novalidate (ngSubmit)="onSubmit()" class="updateForm">
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">{{'update-profile.First Name'|translate}}</ion-label>
+      <ion-input type="text" formControlName="firstName" [(ngModel)]="firstName"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></ion-input>
+    </ion-item>
+    <div class="errorMsg" *ngIf="submitted && f.firstName.errors && f.firstName.errors.required">{{'update-profile.First name is required'|translate}}</div>
+
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">{{'update-profile.Last Name'|translate}}</ion-label>
+      <ion-input type="text" formControlName="lastName"  [(ngModel)]="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"></ion-input>
+    </ion-item>
+    <div class="errorMsg" *ngIf="submitted && f.lastName.errors && f.lastName.errors.required">{{'update-profile.Last name is required' | translate}}</div>
+
+    <ion-item>
+      <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">{{'update-profile.Contact No'|translate}}</ion-label>
+      <ion-input type="number" formControlName="contactNo" [(ngModel)]="contactNo" [ngClass]="{ 'is-invalid': submitted && f.contactNo.errors }"></ion-input>
+    </ion-item>
+    <div class="errorMsg" *ngIf="submitted && f.contactNo.errors && f.contactNo.errors.required">{{'update-profile.Contact number is required'|translate}}</div>
+
+    <ion-item>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">{{'update-profile.Current Address'|translate}}</ion-label>
+      <ion-input type="text" class="address" formControlName="currentAddress" [(ngModel)]="currentAddress" [ngClass]="{ 'is-invalid': submitted && f.currentAddress.errors }"></ion-input>
+    </ion-item>
+    <div class="errorMsg" *ngIf="submitted && f.currentAddress.errors && f.currentAddress.errors.required">{{'update-profile.Current address is required'|translate}}</div>
+
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>{{'update-profile.Marital Status'|translate}}</ion-label>
+    </ion-item>
+
+    <ion-radio-group value="biff" formControlName="radioForMarital" [(ngModel)]="radioForMarital" (ionChange)="showValue($event)" 
+                    [ngClass]="{ 'is-invalid': submitted && f.radioForMarital.errors }">
+    <ion-row>
+      <!-- <ion-item *ngFor="let item of items" >
+        <ion-label>{{item.name}}</ion-label>
+        <ion-radio (ionSelect)="select(item)" [value]="item.id"></ion-radio>
+    </ion-item> -->
+
+      <ion-col>
+        <ion-item>
+          <ion-label>Married</ion-label>
+          <ion-radio slot="start" value="Married" (click)="selected('Married')"></ion-radio>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label>Single</ion-label>
+          <ion-radio slot="start" value="Single" (click)="selected('Single')"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    </ion-radio-group>
+    <div class="errorMsg" *ngIf="submitted && f.radioForMarital.errors && f.radioForMarital.errors.required">{{'update-profile.Please select one'|translate}}</div>
+
+    <div class="updateBtnDiv">
+      <ion-button class="loginButton" color="danger" type="submit" [disabled]="!updateProfileForm" expand="block">{{'update-profile.Update'|translate}} <ion-spinner name="dots" *ngIf="isCalling" class="loader"></ion-spinner></ion-button>
+    </div>
+
+  </form>
+
+</ion-content>

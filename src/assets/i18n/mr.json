@@ -1,0 +1,143 @@
+{
+    "View Candidate":"उमेदवार पहा",
+    "Courses":"अभ्यासक्रम",
+    "View Jobs":"नोकरी पहा",
+    "About Us":"आमच्या विषयी",
+    "Help":"मदत",
+    "Logout":"बाहेर पडा",
+    "Settings":"सेटिंग्ज",
+    "My Profile":"माझे प्रोफाइल",
+    "Confirm Logout":"लॉगआउटची पुष्टी करा",
+    "Do you want to Logout?":"आपण लॉगआउट करू इच्छिता?",
+
+    "Confirm Exit":"बाहेर पडा याची पुष्टी करा",
+    "Do you want to Exit?":"तुम्हाला बाहेर पडायचे आहे का?",
+    "Yes":"होय",
+    "No":"नाही",
+
+
+    "login":{
+        "Login":"लॉगिन",
+        "Welcome Back and":"वेलकम बॅक अँड",
+        "Glad to see you":"तुम्हाला पाहून आनंद झाला",
+        "username":"युजरनेम/इमेल आयडी",
+        "Username is required":"युजरनेम आवश्यक आहे",
+        "Password":"पासवर्ड",
+        "Password is required":"पासवर्ड आवश्यक आहे",
+        "Forgot Password?":"पासवर्ड विसरलात?"
+    },
+
+    "forgot-password":{
+        "title":"पासवर्ड विसरलात",
+        "subText1":"आपल्या खात्याशी संबंधित ईमेल आयडी एंटर करा.",
+        "subTtext2":"आम्ही आपला संकेतशब्द रीसेट करण्यासाठी आपल्या संपर्क नंबरवर आपल्याला ओटीपी पाठवू.",
+        "Enter Email Address":"इमेल आयडी एंटर करा",
+        "Submit":"सबमिट करा"
+    },
+
+    "view-candidate":{
+        "title":"उमेदवार पहा",
+        "Contact No":"मोबाईल क्रमांक",
+        "Email":"ईमेल",
+        "No candidate found":"कोणताही उमेदवार सापडला नाही"
+    },
+    "candidte-details":{
+        "title":"उमेदवाराचा तपशील",
+        "Name":"नाव",
+        "Address":"पत्ता",
+        "Email":"ईमेल",
+        "Contact No":"मोबाईल क्रमांक",
+        "Education":"शिक्षण",
+        "Taluka":"तालुका",
+        "Interest in Study":"अभ्यासाची आवड",
+        "Interest in Work":"कामाची आवड",
+        "Self Employment":"स्वयंरोजगार",
+        "Training Details":"प्रशिक्षण तपशील",
+        "Prefered Location":"प्राधान्यकृत स्थान",
+        "Test Status":"चाचणी स्थिती",
+        "Total Experience":"एकूण अनुभव",
+        "Session Status":"सत्राची स्थिती",
+        "Report":"अहवाल",
+        "Graph":"आलेख",
+        "Update session status":"सत्राची स्थिती अपडेट करा"
+    },
+    "update-session-status":{
+        "title":"सत्राची स्थिती अपडेट करा",
+        "Session Status":"सत्राची स्थिती",
+        "Update Session Date":"सत्राची तारीख अपडेट करा",
+        "Candidate Segregation":"उमेदवार एकत्रीकरण",
+        "Employable":"रोजगारक्षम",
+        "Semi Employable":"अर्ध कर्मचारी",
+        "Fresher":"फ्रेशर",
+        "Comments":"टिप्पण्या",
+        "Required":"आवश्यक आहे",
+        "Update":"अपडेट"
+    },
+    "setting":{
+        "title":"सेटिंग्ज",
+        "Change Password":"संकेतशब्द बदला",
+        "Select Laguage":"भाषा निवडा",
+        "Current Password":"सध्याचा गुप्त शब्द",
+        "Current Password is required":"वर्तमान संकेतशब्द आवश्यक आहे",
+        "New Password":"नवीन संकेतशब्द",
+        "New Password is required":"नवीन संकेतशब्द आवश्यक आहे",
+        "Confirm Password":"पासवर्डची पुष्टी करा",
+        "Confirm Password is required":"कन्फर्म पासवर्ड आवश्यक आहे"
+    },
+    "my-profile":{
+        "title":"माझे प्रोफाइल",
+        "Current Address":"सध्याचा पत्ता",
+        "Permanant Address":"कायमचा पत्ता",
+        "Contact Number":"मोबाईल क्रमांक",
+        "Email":"ईमेल",
+        "Date Of Birth":"जन्म तारीख",
+        "Marital Status":"वैवाहिक स्थिती",
+        "District":"जिल्हा",
+        "Pin Code":"पिन कोड",
+        "Taluka":"तालुका",
+        "Village":"गाव"
+    },
+    "update-profile":{
+        "title":"प्रोफाइल अपडेट करा",
+        "First Name":"पहिले नाव",
+        "First name is required":"पहिले नाव आवश्यक आहे",
+        "Last Name":"आडनाव",
+        "Last name is required":"आडनाव आवश्यक आहे",
+        "Contact No":"मोबाईल क्रमांक",
+        "Contact number is required":"मोबाईल क्रमांक आवश्यक आहे",
+        "Current Address":"सध्याचा पत्ता",
+        "Current address is required":"सध्याचा पत्ता आवश्यक आहे",
+        "Marital Status":"वैवाहिक स्थिती",
+        "Please select one":"कृपया एक निवडा",
+        "Update":"अपडेट"    
+    },
+
+    "view-courses":{
+        "title":"अभ्यासक्रम",
+        "No course available":"कोर्स उपलब्ध नाही",
+        "Institute Name":"संस्थेचे नाव",
+        "Course Duration":"कोर्स कालावधी"
+    },
+
+    "view-jobs":{
+        "title":"नोकर्‍या",
+        "No jobs available":"नोकर्‍या उपलब्ध नाहीत",
+        "Qualification":"पात्रता",
+        "Organisation Name":"संस्थेचे नाव"
+    },
+
+    "about-us":{
+        "title":"आमच्याबद्दल",
+        "About Kaaryam":"कार्यम विषयी",
+        "subText":"ध्येय करिअर मेंन्टर हा देशातील प्रीमियर करिअर गायडन्स अँड प्लानिंग ऑर्गनायझेशन आहे, जो प्रशिक्षित आणि प्रमाणित ज्येष्ठ पात्र मार्गदर्शकांचा समुदाय तयार करण्याच्या संकल्पनेवर मागील १२ वर्षांपासून कार्यरत आहे, देशातील सर्वत्र पसरलेल्या, तरुण पिढीच्या निर्णय, नियोजन आणि विकासाचा मार्गदर्शक आहे. यशस्वी आणि आनंदी जीवनासाठी सर्वात योग्य कारकीर्दीचे लक्ष्य आणि मार्ग.",
+        "Contact Our Team":"आमच्या टीम सोबत संपर्क साधा",
+        "detailAddress":"एस - 25, कलागर बिल्डिंग, द्वितीय मजला पार्वती औद्योगिक वसाहत, सातारा रोड, पुणे, महाराष्ट्र 411009",
+        "Please contact us if you have any questions":"आपल्याला काही प्रश्न असल्यास कृपया आमच्याशी संपर्क साधा."
+    },
+
+    "help":{
+        "title":"मदत",
+        "text":"अ‍ॅपद्वारे नेव्हिगेशनच्या माहितीसाठी कृपया खालील व्हिडिओ पहा.",
+        "Start Video":"व्हिडिओ चालू करा"
+    }
+}

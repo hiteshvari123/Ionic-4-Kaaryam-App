@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "916210504041",
+    "firebase_url": "https://ionic-margdarshak-app.firebaseio.com",
+    "project_id": "ionic-margdarshak-app",
+    "storage_bucket": "ionic-margdarshak-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916210504041:android:75394e114446885cd2edf8",
+        "android_client_info": {
+          "package_name": "io.ionic.margdarshak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916210504041-3qoe27aheme9k5dvl2ne87fj4maflieq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTosLWh8-ud7snokxKLk2RpUI8r--FSMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916210504041-3qoe27aheme9k5dvl2ne87fj4maflieq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,70 @@
+.ios, .md{
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+        );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .settingButton{
+        $segment-button-text-color-activated:#981F64;
+    }
+    ion-segment-button{
+        --color-checked: var(--ion-toolbar-segment-color-checked,var(--ion-color,#31BFA9));
+    }
+    .segmentLabel{
+        text-transform: capitalize;
+    }
+
+    .iconDiv{
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 1px 6px 0 rgb(154, 159, 162);
+        text-align: center;
+        align-self: center;
+        margin: 24px auto;
+        // background: #03648F;
+        background: #2689C4;
+    
+        ion-icon{
+          font-size: 40px;
+          color: white;
+        }
+    }
+    .ionsize {
+        z-index: 9;
+    }
+    .errorMsg{
+        color: red;
+        font-size: 11px;
+        padding: 3px 35px 0px;
+    }
+    .icons{
+        margin-right: 10px;
+    }
+    .changePasswordBtn{
+        margin: 15px;
+        --border-radius: 3px;
+        text-transform: capitalize;
+        font-size: 15px;
+    }
+    .mainDiv{
+        margin: 0px 25px;
+    }
+    .subDiv{
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+    .floatingLabel{
+        font-size: 14px;
+    }
+
+}

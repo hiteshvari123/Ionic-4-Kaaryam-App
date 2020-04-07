@@ -1,0 +1,112 @@
+<ion-header no-border> 
+  <ion-toolbar class="customToolbar"> 
+    <ion-title class="customColor">{{'my-profile.title'|translate}}</ion-title> 
+
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false" class="customColor"></ion-menu-button>
+      </ion-buttons> 
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngClass]="isLoading ? 'loader' : 'no_loader'">
+    <ion-spinner></ion-spinner>
+  </div>
+  
+  <div class="profileDiv">
+    <ion-avatar class="profileImg">
+      <img src="assets/img/default_profile.png" class="image"/>
+    </ion-avatar>
+    <p class="name">{{profileInfo?.firstName}} {{profileInfo?.lastName}}</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="editFabIcon" (click)="goToUpdateProfile()">
+    <ion-fab-button class="fabButton">
+      <ion-icon name="pencil-outline"  class="editIcon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div>
+    <div class="infoDiv">
+      <ion-item lines="none">
+        <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+        <ion-label class="infoTitle">{{ 'my-profile.Current Address' | translate }} :</ion-label>
+      </ion-item>
+      <p class="info">{{profileInfo?.address1}}</p>
+    </div>
+
+    <div class="infoDiv">
+      <ion-item lines="none">
+        <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+        <ion-label class="infoTitle">{{'my-profile.Permanant Address'|translate}} :</ion-label>
+      </ion-item>
+      <p class="info">{{profileInfo?.address2}}</p>
+    </div>
+
+    <div class="infoDiv">
+      <ion-item lines="none">
+        <ion-icon name="call-outline" slot="start" class="icons"></ion-icon>
+        <ion-label class="infoTitle">{{'my-profile.Contact Number'|translate}} :</ion-label>
+      </ion-item>
+      <p class="info">{{profileInfo?.contactNo}}</p>
+    </div>
+
+    <div class="infoDiv">
+      <ion-item lines="none">
+        <ion-icon name="mail-outline" slot="start" class="icons"></ion-icon>
+        <ion-label class="infoTitle">{{'my-profile.Email'|translate}} :</ion-label>
+      </ion-item>
+      <p class="info">{{profileInfo?.emailId}}</p>
+    </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="calendar-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.Date Of Birth'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{DOB}}</p>
+  </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="person-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.Marital Status'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{profileInfo?.maritalStatus}}</p>
+  </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.District'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{profileInfo?.district}}</p>
+  </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.Pin Code'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{profileInfo?.pinCode}}</p>
+  </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.Taluka'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{profileInfo?.taluka}}</p>
+  </div>
+
+  <div class="infoDiv">
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start" class="icons"></ion-icon>
+      <ion-label class="infoTitle">{{'my-profile.Village'|translate}} :</ion-label>
+    </ion-item>
+    <p class="info">{{profileInfo?.village}}</p>
+  </div>
+
+  </div>
+</ion-content>

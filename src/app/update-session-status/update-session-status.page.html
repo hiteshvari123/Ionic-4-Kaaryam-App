@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="previousPage()" class="customColor">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="customColor">{{'update-session-status.title'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <h5 class="header">{{'update-session-status.Session Status'|translate}}</h5>
+  <form [formGroup]="updateSessionForm" novalidate (ngSubmit)="onSubmit()">
+    <ion-card class="cardData">
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label position="floating">{{'update-session-status.Update Session Date'|translate}}</ion-label>
+        <ion-datetime value="" display-timezone="utc" formControlName="dateTime"></ion-datetime>
+      </ion-item>
+      <div class="errorMsg" *ngIf="submitted && f.dateTime.errors && f.dateTime.errors.required">{{'update-session-status.Required'|translate}}</div>
+
+      <ion-item>
+        <ion-icon slot="start" name="cog-outline"></ion-icon>
+        <ion-label position="floating">{{'update-session-status.Candidate Segregation'|translate}}</ion-label>
+        <ion-select  formControlName="selectSegregation">
+          <ion-select-option value="employable">{{'update-session-status.Employable'|translate}}</ion-select-option>
+          <ion-select-option value="semi-employable">{{'update-session-status.Semi Employable'|translate}}</ion-select-option>
+          <ion-select-option value="fresher">{{'update-session-status.Fresher'|translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="errorMsg" *ngIf="submitted && f.selectSegregation.errors && f.selectSegregation.errors.required">{{'update-session-status.Required'|translate}}</div>
+
+      <ion-item>
+        <ion-icon slot="start" name="chatbubbles-outline"></ion-icon>
+        <ion-label position="floating">{{'update-session-status.Comments'|translate}}</ion-label>
+        <ion-input type="text"  formControlName="comments"></ion-input>
+      </ion-item>
+      <div class="errorMsg" *ngIf="submitted && f.comments.errors && f.comments.errors.required">{{'update-session-status.Required'|translate}}</div>
+
+      <div class="updateDiv">
+        <ion-button  color="danger" type="submit"  expand="block">{{'update-session-status.Update'|translate}} <ion-spinner name="dots" *ngIf="isCalling" class="loader"></ion-spinner></ion-button>
+      </div>
+    </ion-card>
+  </form>
+
+</ion-content>

@@ -1,0 +1,59 @@
+.ios, .md{
+
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+          );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .divHeader {
+        margin-top: -35px;
+        background: lightblue;
+        height: 35%;
+    }
+    .content{
+        position: absolute;
+        top: 35%;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow-y: scroll;        
+    }
+    .headerTitle{
+        color: white;
+        padding: 55px;
+        font-weight: bold;
+    }
+    .subHeader{
+        color: #25a9e4;
+    }
+    .aboutInfoDiv{
+        padding: 30px;
+    }
+    .infoPTag{
+        letter-spacing: 0.5px;
+        font-size: 13px;
+        color: #616161;
+    }
+    .contactTag{
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        color: #25a9e4 !important;
+    }
+    .icons{
+        margin-right: 20px;
+    }
+    .contactLabel{
+        font-size: 15px;
+    }
+    .links{
+        color: black;
+        text-decoration: none;
+    }
+}
+

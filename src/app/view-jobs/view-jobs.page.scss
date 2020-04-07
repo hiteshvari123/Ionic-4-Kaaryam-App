@@ -1,0 +1,60 @@
+.ios, .md{
+
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+          );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        height: 105%;
+    }
+    .no_loader {
+        display: none;
+        height: 0%;
+    }
+    .titleDiv{
+        font-size: 17px;
+        padding: 10px 0px 0px 8px;
+        color: black;
+    }
+    .courseIcon{
+        margin-right: 10px;
+    }
+    .jobTag{
+        margin-bottom: 0px;
+        color: #6b6a6a;
+        padding: 0px 0px 0px 25px;
+        margin-top: 5px;
+    }
+    .jobTag.courseDurationTag{
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .noDataDiv{
+        text-align: center;
+        transform: translateY(200%);
+    }
+    .noDataImg{
+        width: 50px;
+    }
+    .noDataMsg{
+        font-size: 15px;
+    }
+    .searchBtn{
+        background: transparent;
+    }
+    .searchIcon{
+        font-size: 18px;
+        color: #ffffff;
+    }
+}

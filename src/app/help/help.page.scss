@@ -1,0 +1,23 @@
+.ios, .md{
+    
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+          );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .infoDiv{
+        text-align: center;
+        padding: 20px;
+        color: #2894be;
+    }
+    .videoLink{
+        color: #fff;
+        text-decoration: none;
+    }
+}

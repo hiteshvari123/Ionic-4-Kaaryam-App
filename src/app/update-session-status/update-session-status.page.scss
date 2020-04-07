@@ -1,0 +1,29 @@
+.ios, .md{
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+          );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    .header{
+        text-align: center;
+        color: #2894BE;
+        font-weight: 600;
+    }
+    .errorMsg{
+        color: red;
+        font-size: 11px;
+        padding: 3px 35px 0px;
+    }
+    .updateDiv{
+        padding: 15px;
+    }
+    .cardData{
+        padding: 10px;
+    }
+}

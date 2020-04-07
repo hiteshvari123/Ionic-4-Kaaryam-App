@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+    <ion-title class="customColor">Course Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="view-courses" class="customColor"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+         Course Name:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.name}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Institute Name:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.instname}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Institute Phone Number:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.contactNo}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Location:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.location}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Address:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.instututeDetail}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Course duration:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.duration}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Course Details:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.details}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Fees:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{courseDetailData?.fees}}</span> 
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

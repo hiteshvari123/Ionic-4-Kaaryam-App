@@ -1,0 +1,143 @@
+{
+    "View Candidate":"View Candidate",
+    "Courses":"Courses",
+    "View Jobs":"View Jobs",
+    "About Us":"About Us",
+    "Help":"Help",
+    "Logout":"Logout",
+    "Settings":"Settings",
+    "My Profile":"My Profile",
+    "Confirm Logout":"Confirm Logout",
+    "Do you want to Logout?":"Do you want to Logout?",
+
+    "Confirm Exit":"Confirm Exit",
+    "Do you want to Exit?":"Do you want to Exit?",
+    "Yes":"Yes",
+    "No":"No",
+
+    "login":{
+        "Login":"Login",
+        "Welcome Back and":"Welcome Back and",
+        "Glad to see you":"Glad to see you",
+        "username":"your@email.com",
+        "Username is required":"Username is required",
+        "Password":"Password",
+        "Password is required":"Password is required",
+        "Forgot Password?":"Forgot Password?"
+    },
+
+    "forgot-password":{
+        "title":"Forgot Password",
+        "subText1":"Enter the email address associated with your account.",
+        "subTtext2":"we will send you OTP to your contact number to reset your password.",
+        "Enter Email Address":"Enter Email Address",
+        "Submit":"Submit"
+    },
+
+    "view-candidate":{
+        "title":"View Candidates",
+        "Contact No":"Contact No",
+        "Email":"Email",
+        "No candidate found":"No candidate found"
+    },
+    "candidte-details":{
+        "title":"Candidate Details",
+        "Name":"Name",
+        "Address":"Address",
+        "Email":"Email",
+        "Contact No":"Contact No",
+        "Education":"Education",
+        "Taluka":"Taluka",
+        "Interest in Study":"Interest in Study",
+        "Interest in Work":"Interest in Work",
+        "Self Employment":"Self Employment",
+        "Training Details":"Training Details",
+        "Prefered Location":"Prefered Location",
+        "Test Status":"Test Status",
+        "Total Experience":"Total Experience",
+        "Session Status":"Session Status",
+        "Report":"Report",
+        "Graph":"Graph",
+        "Update session status":"Update session status",
+        "Employable":"Employable",
+        "Semi Employable":"Semi Employable",
+        "Fresher":"Fresher",
+        "Comments":"Comments",
+        "Required":"Required",
+        "Update":"Update"
+    },
+    "update-session-status":{
+        "title":"Update Session Status",
+        "Session Status":"Session Status",
+        "Update Session Date":"Update Session Date",
+        "Candidate Segregation":"Candidate Segregation"
+    },
+
+    "setting":{
+        "title":"Settings",
+        "Change Password":"Change Password",
+        "Select Laguage":"Select Laguage",
+        "Current Password":"Current Password",
+        "Current Password is required":"Current Password is required",
+        "New Password":"New Password",
+        "New Password is required":"New Password is required",
+        "Confirm Password":"Confirm Password",
+        "Confirm Password is required":"Confirm Password is required"
+    },
+    "my-profile":{
+        "title":"My Profile",
+        "Current Address":"Current Address",
+        "Permanant Address":"Permanant Address",
+        "Contact Number":"Contact Number",
+        "Email":"Email",
+        "Date Of Birth":"Date Of Birth",
+        "Marital Status":"Marital Status",
+        "District":"District",
+        "Pin Code":"Pin Code",
+        "Taluka":"Taluka",
+        "Village":"Village"
+    },
+    "update-profile":{
+        "title":"Update Profile",
+        "First Name":"First Name",
+        "First name is required":"First name is required",
+        "Last Name":"Last Name",
+        "Last name is required":"Last name is required",
+        "Contact No":"Contact No",
+        "Contact number is required":"Contact number is required",
+        "Current Address":"Current Address",
+        "Current address is required":"Current address is required",
+        "Marital Status":"Marital Status",
+        "Please select one":"Please select one",
+        "Update":"Update"
+    },
+
+    "view-courses":{
+        "title":"Courses",
+        "No course available":"No course available",
+        "Institute Name":"Institute Name",
+        "Course Duration":"Course Duration"
+    },
+
+    "view-jobs":{
+        "title":"Jobs",
+        "No jobs available":"No jobs available",
+        "Qualification":"Qualification",
+        "Organisation Name":"Organisation Name"
+    },
+
+    "about-us":{
+        "title":"About Us",
+        "About Kaaryam":"About Kaaryam",
+        "subText":"Dheya Career Mentor is a premiere Career Guidence and Planning organissation in the country, working for last 12 years on a concept of building community of trained and certified senior qualified guides, spread  all over the country who mentor the young generationin deciding,planning and developing the most suitable career goal and paths for a succesful and happy life.",
+        "Contact Our Team":"Contact Our Team",
+        "detailAddress":"S - 25, Kalagar Building, 2nd floor Parvati Industrial Estate, Satara Rd, Pune, Maharashtra 411009",
+        "Please contact us if you have any questions":"Please contact us if you have any questions."
+    },
+
+    "help":{
+        "title":"Help",
+        "text":"Kindly view the below Video for information of navigation through the app.",
+        "Start Video":"Start Video"
+    }
+}

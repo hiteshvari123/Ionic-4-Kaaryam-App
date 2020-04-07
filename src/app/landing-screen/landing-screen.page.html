@@ -1,0 +1,21 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>landing-screen</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content style="--background:#FFA848">
+
+  <div>
+    <ion-slides pager="true" [options]="slideOpt" autoplay="true" loop="true">
+      <ion-slide *ngFor="let slide of sliders">
+        <img src="{{slide?.img}}" class="slide-image"/>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
+
+<ion-footer (click)="goToLogin()">
+ <div class="custom-footer-div">Continue</div>
+</ion-footer>

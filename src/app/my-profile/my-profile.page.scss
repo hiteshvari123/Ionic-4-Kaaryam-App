@@ -1,0 +1,62 @@
+.customToolbar{
+  --ion-toolbar-background: linear-gradient(
+      to right,
+      rgb(37, 131, 199) 0%,
+      rgba(49, 191, 169, 1) 90%,
+      rgba(49, 191, 169, 1) 100%
+    );
+}
+.customColor{
+  --color: #ffffff !important;
+}
+  .profileDiv{
+    background: #30BBAB;
+    // height: 35%;
+    height: 30%;
+  }
+  .profileImg{
+    margin: auto;
+    width: 30%;
+    height: 60%;
+  }
+  .image{
+    margin-top: 15px;
+  }
+  .name{
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 25px;
+  }
+  .icons{
+    margin-right: 5px;
+    margin-bottom: 0px;
+  }
+  .infoTitle{
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .info{
+    margin: 0px 0px 10px 40px;
+    font-size: 15px;
+    // letter-spacing: 0.5px
+  }
+  .infoDiv{
+    border-bottom: 0.55px solid lightgray;
+  }
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 105%;
+}
+.no_loader {
+    display: none;
+    height: 0%;
+}
+.fabButton{
+  width: 50px;
+  height: 50px;
+}

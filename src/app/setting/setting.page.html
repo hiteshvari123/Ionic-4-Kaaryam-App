@@ -1,0 +1,99 @@
+<ion-header no-border> 
+  <ion-toolbar class="customToolbar"> 
+    <ion-title  class="customColor">{{ 'setting.title' | translate }}</ion-title> 
+    <!-- {{ 'setting.title' | translate }} -->
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false" class="customColor"></ion-menu-button>
+      </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-toolbar> 
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment"> 
+
+      <ion-segment-button value="change-password"> 
+        <ion-label class="segmentLabel">{{'setting.Change Password'|translate}}</ion-label> 
+        <ion-icon name="lock-open-outline"></ion-icon> 
+      </ion-segment-button> 
+
+      <ion-segment-button value="change-laguage"> 
+        <ion-label  class="segmentLabel">{{'setting.Select Laguage'|translate}}</ion-label> 
+        <ion-icon name="language-sharp"></ion-icon> 
+      </ion-segment-button> 
+
+    </ion-segment> 
+ 
+    </ion-toolbar> 
+
+    <div [ngSwitch]="segment">
+     
+      <ion-list *ngSwitchCase="'change-password'">
+        <form [formGroup]="changePasswordForm" [formGroup]="myForm" #formDirective="ngForm"  novalidate (ngSubmit)="onSubmit()">
+          <div>
+            <div class="iconDiv">
+              <ion-icon name="lock-open-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="mainDiv">
+            <div class="subDiv">
+              <ion-item>
+                <ion-label position="floating" class="floatingLabel">{{'setting.Current Password'|translate}}</ion-label>
+                <ion-icon name="lock-open-outline" slot="start" class="icons"></ion-icon>
+                <ion-icon [name]="iconType" slot="end" class="ionsize" (click)="toggleCurrentPassword()"></ion-icon>
+                <ion-input [type]="passwordType" formControlName="currentPassword" 
+                          [ngClass]="{ 'is-invalid': submitted && f.currentPassword.errors }"></ion-input>
+              </ion-item>
+              <div class="errorMsg" *ngIf="submitted && f.currentPassword.errors && f.currentPassword.errors.required">{{'setting.Current Password is required'|translate}}</div>
+            
+
+              <ion-item>
+                <ion-label position="floating" class="floatingLabel">{{'setting.New Password'|translate}}</ion-label>
+                <ion-icon name="lock-open-outline" slot="start" class="icons"></ion-icon>
+                <ion-icon [name]="iconType1" slot="end" class="ionsize" (click)="toggleNewPassword()"></ion-icon>
+                <ion-input [type]="passwordType1" formControlName="newPassword"
+                            [ngClass]="{'is-invalid':submitted && f.newPassword.errors}"></ion-input>
+              </ion-item>
+              <div class="errorMsg" *ngIf="submitted && f.newPassword.errors && f.newPassword.errors.required">{{'setting.New Password is required'|translate}}</div>
+
+              <ion-item>
+                <ion-label position="floating" class="floatingLabel">{{'setting.Confirm Password'|translate}}</ion-label>
+                <ion-icon name="lock-open-outline" slot="start" class="icons"></ion-icon>
+                <ion-icon [name]="iconType2" slot="end" class="ionsize" (click)="toggleConfirmPassword()"></ion-icon>
+                <ion-input [type]="passwordType2" formControlName="confirmPassword"
+                            [ngClass]="{'is-invalid':submitted && f.confirmPassword.errors}"></ion-input>
+              </ion-item>
+              <div class="errorMsg" *ngIf="submitted && f.confirmPassword.errors && f.confirmPassword.errors.required">{{'setting.Confirm Password is required'|translate}}</div>
+
+              <div>
+                <ion-button class="changePasswordBtn" color="danger" type="submit" [disabled]="!changePasswordForm" expand="block">{{'setting.Change Password'|translate}} <ion-spinner name="dots" *ngIf="isCalling" class="loader"></ion-spinner></ion-button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'change-laguage'">
+
+        <ion-list>
+          <ion-radio-group value="languages" [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+            <ion-item>
+              <ion-label>English</ion-label>
+              <ion-radio slot="end" value="en"></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>मराठी</ion-label>
+              <ion-radio slot="end" value="mr"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+      </ion-list>
+    </div>
+
+</ion-content>

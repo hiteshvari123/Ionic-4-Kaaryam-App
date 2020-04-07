@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+    <ion-title class="customColor" *ngIf="!isSearchOpened">{{'view-jobs.title'|translate}}</ion-title>
+
+    <ion-searchbar   *ngIf="isSearchOpened" [showCancelButton]="true" (ionCancel)="isSearchOpened=false" 
+    (ionChange)="searchResult()" [(ngModel)]="searchTerm" ></ion-searchbar> 
+    <ion-buttons slot="end" >
+      <button ion-button icon-only class="searchBtn" *ngIf="!isSearchOpened" (click)="isSearchOpened=true">
+        <ion-icon class="icons" name="search" class="searchIcon"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" class="customColor"></ion-menu-button>
+    </ion-buttons> 
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngClass]="isLoading ? 'loader' : 'no_loader'">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-card *ngFor="let data of jobList" (click)="goToJobDetails(data)">
+    <div class="titleDiv">
+      <ion-icon name="layers-sharp" slot="start" class="courseIcon"></ion-icon>
+      <span>{{data.jobName}}</span>
+    </div>
+  
+    <p class="jobTag">{{'view-jobs.Qualification'|translate}}: <span>{{data.qualification}}</span></p>
+    <p class=" jobTag courseDurationTag">{{'view-jobs.Organisation Name'|translate}}: <span>{{data.Orgname}}</span></p>
+  </ion-card>
+
+  <div class="noDataDiv" *ngIf="jobList?.length==0||jobList==null" >
+    <img src="assets/img/nodata.png" class="noDataImg"/>
+    <p class="noDataMsg">{{'view-jobs.No jobs available'|translate}}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,28 @@
+.ios, .md{
+
+    .customToolbar{
+        --ion-toolbar-background: linear-gradient(
+            to right,
+            rgb(37, 131, 199) 0%,
+            rgba(49, 191, 169, 1) 90%,
+            rgba(49, 191, 169, 1) 100%
+          );
+    }
+    .customColor{
+        --color: #ffffff !important;
+    }
+    ion-grid{
+        margin-top: 40px;
+    }
+    ion-row{
+        border-top: 0.55px solid;
+    }
+    ion-col{
+        padding: 20px;
+        text-align: center;
+    }
+    .col1{
+        padding: 20px;
+       text-align: left !important;
+    }
+}

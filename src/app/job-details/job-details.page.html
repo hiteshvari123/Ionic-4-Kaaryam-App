@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="customToolbar">
+    <ion-title class="customColor">Job Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="view-jobs" class="customColor"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- <h5>Job Details</h5> -->
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+         Job Name:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.jobName}}</span> 
+      </ion-col>
+    </ion-row> 
+
+    <ion-row>
+      <ion-col>
+         Job Details:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.JobDetails}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Organisation Name:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.Orgname}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Qualification:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.qualification}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Salary:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.salary}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Address:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.village}}</span> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+         Office time:
+      </ion-col>
+
+      <ion-col class="col1">
+        <span> {{jobDetails?.type}}</span> 
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,48 @@
+
+  <ion-app>
+
+    <ion-menu contentId="content1" side="start">
+
+      <ion-header>
+        <ion-toolbar class="customToolbar">
+          <img src="assets/img/margdarshak (1).png" class="margdarshakImg"/>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerDirection]="'root'" *ngFor="let p of appMenu" [routerLink]="[p.url]" routerLinkActive="active-link">
+              <ion-icon slot="start" [name]="p.icon" routerLinkActive="active-link"></ion-icon>
+              <ion-label>{{p.title | translate}}</ion-label>
+            </ion-item>
+
+            <ion-item (click)="logout()">
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>{{'Logout'|translate}}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+      
+    </ion-menu>
+
+  <ion-router-outlet id="content1" main ></ion-router-outlet>
+
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" *ngIf="cur_path==false" class="bottomTabbar">
+      <ion-tab-button *ngFor="let tab of tabOptions" tappable [routerLink]="[tab.url]" routerLinkActive="active-link">
+        <ion-icon [name]="tab.icon"></ion-icon>
+        <ion-label>{{tab.title|translate}}</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+</ion-app>
+
+<!-- <ion-nav #mycontent [root]="rootPage"></ion-nav> -->
+
+
+ 
