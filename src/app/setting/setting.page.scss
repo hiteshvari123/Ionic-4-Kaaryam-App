@@ -1,10 +1,16 @@
 .ios, .md{
     .customToolbar{
-        --ion-toolbar-background: linear-gradient(
-            to right,
-            rgb(37, 131, 199) 0%,
-            rgba(49, 191, 169, 1) 90%,
-            rgba(49, 191, 169, 1) 100%
+        // --ion-toolbar-background: linear-gradient(
+        //     to right,
+        //     rgb(37, 131, 199) 0%,
+        //     rgba(49, 191, 169, 1) 90%,
+        //     rgba(49, 191, 169, 1) 100%
+        // );
+        --ion-toolbar-background: linear-gradient( 
+              to right,
+                #ff6c36 0%,
+                rgba(239, 172, 101, 0.89) 90%, 
+                rgb(242, 182, 118) 100%
         );
     }
     .customColor{
@@ -14,7 +20,8 @@
         $segment-button-text-color-activated:#981F64;
     }
     ion-segment-button{
-        --color-checked: var(--ion-toolbar-segment-color-checked,var(--ion-color,#31BFA9));
+        // --color-checked: var(--ion-toolbar-segment-color-checked,var(--ion-color,#31BFA9));
+        --color-checked: var(--ion-toolbar-segment-color-checked,var(--ion-color,#ff6c36));
     }
     .segmentLabel{
         text-transform: capitalize;
@@ -31,8 +38,8 @@
         text-align: center;
         align-self: center;
         margin: 24px auto;
-        // background: #03648F;
-        background: #2689C4;
+        // background: #2689C4;
+        background: #ff6c36;
     
         ion-icon{
           font-size: 40px;

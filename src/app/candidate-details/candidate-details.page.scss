@@ -1,12 +1,18 @@
 .ios, .md{
 
     .customToolbar{
-        --ion-toolbar-background: linear-gradient(
-            to right,
-            rgb(37, 131, 199) 0%,
-            rgba(49, 191, 169, 1) 90%,
-            rgba(49, 191, 169, 1) 100%
-          );
+        // --ion-toolbar-background: linear-gradient(
+        //     to right,
+        //     rgb(37, 131, 199) 0%,
+        //     rgba(49, 191, 169, 1) 90%,
+        //     rgba(49, 191, 169, 1) 100%
+        //   );
+        --ion-toolbar-background: linear-gradient( 
+              to right,
+                #ff6c36 0%,
+                rgba(239, 172, 101, 0.89) 90%, 
+                rgb(242, 182, 118) 100%
+        );
     }
     .customColor{
         --color: #ffffff !important;
@@ -44,6 +50,7 @@
         margin-bottom: 10px;
     }
     .btn{
-        --background: #2894BE !important;
+      //  --background: #2894BE !important;
+        --background: #ff6c36 !important;
     }
 }

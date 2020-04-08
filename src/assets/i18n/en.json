@@ -70,7 +70,9 @@
         "title":"Update Session Status",
         "Session Status":"Session Status",
         "Update Session Date":"Update Session Date",
-        "Candidate Segregation":"Candidate Segregation"
+        "Candidate Segregation":"Candidate Segregation",
+        "Update":"Update",
+        "Required":"Required"
     },
 
     "setting":{
@@ -131,6 +133,7 @@
         "About Kaaryam":"About Kaaryam",
         "subText":"Dheya Career Mentor is a premiere Career Guidence and Planning organissation in the country, working for last 12 years on a concept of building community of trained and certified senior qualified guides, spread  all over the country who mentor the young generationin deciding,planning and developing the most suitable career goal and paths for a succesful and happy life.",
         "Contact Our Team":"Contact Our Team",
+        "Address":"Address",
         "detailAddress":"S - 25, Kalagar Building, 2nd floor Parvati Industrial Estate, Satara Rd, Pune, Maharashtra 411009",
         "Please contact us if you have any questions":"Please contact us if you have any questions."
     },

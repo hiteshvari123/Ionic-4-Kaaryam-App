@@ -1,20 +1,31 @@
 .ios, .md{
 
     .customToolbar{
-        --ion-toolbar-background: linear-gradient(
-            to right,
-            rgb(37, 131, 199) 0%,
-            rgba(49, 191, 169, 1) 90%,
-            rgba(49, 191, 169, 1) 100%
-          );
+        // --ion-toolbar-background: linear-gradient(
+        //     to right,
+        //     rgb(37, 131, 199) 0%,
+        //     rgba(49, 191, 169, 1) 90%,
+        //     rgba(49, 191, 169, 1) 100%
+        //   );
+        --ion-toolbar-background: linear-gradient( 
+              to right,
+                #ff6c36 0%,
+                rgba(239, 172, 101, 0.89) 90%, 
+                rgb(242, 182, 118) 100%
+        );
     }
     .customColor{
         --color: #ffffff !important;
     }
     .divHeader {
         margin-top: -35px;
-        background: lightblue;
+        // background: lightblue;
+        //background: #ffa848;
         height: 35%;
+    }
+    .aboutUsImg{
+        height: 100%;
+      //  margin-top: 5%;
     }
     .content{
         position: absolute;
@@ -30,10 +41,11 @@
         font-weight: bold;
     }
     .subHeader{
-        color: #25a9e4;
+      //  color: #25a9e4;
+        color: #ff6c36;
     }
     .aboutInfoDiv{
-        padding: 30px;
+        padding: 15px 30px;
     }
     .infoPTag{
         letter-spacing: 0.5px;
@@ -43,7 +55,8 @@
     .contactTag{
         letter-spacing: 0.5px;
         font-size: 14px;
-        color: #25a9e4 !important;
+     //   color: #25a9e4 !important;
+        color: #ff6c36 !important;
     }
     .icons{
         margin-right: 20px;

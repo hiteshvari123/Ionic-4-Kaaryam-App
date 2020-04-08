@@ -132,7 +132,7 @@ export class AppComponent {
       
       this.statusBar.overlaysWebView(false);
       // set status bar 
-      this.statusBar.backgroundColorByHexString('#2894BE');
+      this.statusBar.backgroundColorByHexString('#ffa848');
 
       this.service.setInitialAppLanguage();
       this.selectedLanguage=localStorage.getItem('SELECTED_LANGUAGE')

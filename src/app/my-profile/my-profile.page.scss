@@ -1,16 +1,25 @@
 .customToolbar{
-  --ion-toolbar-background: linear-gradient(
+  // --ion-toolbar-background: linear-gradient(
+  //     to right,
+  //     rgb(37, 131, 199) 0%,
+  //     rgba(49, 191, 169, 1) 90%,
+  //     rgba(49, 191, 169, 1) 100%
+  //   );
+
+ // rgb(243, 130, 5) 0%,
+  --ion-toolbar-background: linear-gradient( 
       to right,
-      rgb(37, 131, 199) 0%,
-      rgba(49, 191, 169, 1) 90%,
-      rgba(49, 191, 169, 1) 100%
+        #ff6c36 0%,
+        rgba(239, 172, 101, 0.89) 90%, 
+        rgb(242, 182, 118) 100%
     );
 }
 .customColor{
   --color: #ffffff !important;
 }
   .profileDiv{
-    background: #30BBAB;
+   // background: #30BBAB;
+    background: #ffa848;
     // height: 35%;
     height: 30%;
   }
@@ -59,4 +68,11 @@
 .fabButton{
   width: 50px;
   height: 50px;
+}
+// button.button-native{
+//   --background: #ffa644;
+// }
+
+ion-fab-button {
+  --background:#ffa644 !important;
 }

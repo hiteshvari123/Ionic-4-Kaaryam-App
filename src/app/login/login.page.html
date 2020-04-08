@@ -1,8 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
 
 <ion-content  style="--background: url('/assets/img/Login-bg-2.png') no-repeat !important;">
   <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
@@ -23,24 +18,6 @@
           <ion-label (click)="languageChanged('mr')">मराठी</ion-label>
         </ion-col>
       </ion-row>
-
-      <!-- <ion-radio-group>
-      <ion-row>
-        <ion-col col=6>
-          <ion-item class="languageItem">
-            <ion-label>English</ion-label>
-            <ion-radio slot="start" value="en" (click)="languageChanged('en')"></ion-radio>
-          </ion-item>
-        </ion-col>
-  
-        <ion-col col=6>
-          <ion-item class="languageItem">
-            <ion-label>मराठी</ion-label>
-            <ion-radio slot="start" value="mr" (click)="languageChanged('mr')"></ion-radio>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-radio-group> -->
 
       <div class="loginDiv">
         <ion-item class="items">
