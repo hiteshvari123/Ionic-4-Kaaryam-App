@@ -12,7 +12,9 @@ import { runInThisContext } from 'vm';
 import { Network } from '@ionic-native/network/ngx';
 import { ServicesService } from './providers/services/services.service';
 import { TranslateService } from '@ngx-translate/core';
+//import { Firebase } from '@ionic-native/firebase/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
+import { MyProfilePage } from './my-profile/my-profile.page';
 
 @Component({
   selector: 'app-root',
@@ -69,6 +71,7 @@ export class AppComponent {
      private service:ServicesService,
      private translate:TranslateService,
      private fcm:FCM
+    //private firebase:Firebase
     
   ) {
     this.initializeApp();
@@ -76,6 +79,7 @@ export class AppComponent {
     // watch network for a disconnection
     let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
       console.log('network was disconnected :-(');
+      alert("network disconnected")
     });
 
     // stop disconnect watch
@@ -84,13 +88,16 @@ export class AppComponent {
     // watch network for a connection
     let connectSubscription = this.network.onConnect().subscribe(() => {
       console.log('network connected!');
+      service.presentToast("Connected to Internet...")
+
       // We just got a connection but we need to wait briefly
       // before we determine the connection type. Might need to wait.
       // prior to doing any api requests as well.
       setTimeout(() => {
         if (this.network.type === 'wifi') {
           console.log('we got a wifi connection, woohoo!');
-        }
+          service.presentToast("No Internet Connection...")
+        } 
       }, 3000);
     });
 
@@ -105,9 +112,10 @@ export class AppComponent {
 
     
        this.platform.backButton.subscribeWithPriority(1, () => {
-      if (this.router.url.indexOf('/login') >= 0) {
-        navigator['app'].exitApp();
-      }
+  
+        if (this.router.url.indexOf('/login') >= 0 ) {
+          navigator['app'].exitApp();
+        }
         if(this.path=='/view-candidate'||this.path=='/view-courses'||this.path=='/view-jobs'||this.path=='/about'||this.path=='/help' 
             ||this.path=='/setting'||this.path=='/my-profile' ){
           console.log("In Root Pages..");
@@ -140,23 +148,36 @@ export class AppComponent {
       this.service.setLanguage(this.selectedLanguage)
     })
 
+    // ********** FIREBASE NOTIFOCATION *************//
 
     this.fcm.getToken().then(token => {
-      console.log(token);
+      console.log("Token getToken",token);
+      alert(token);
     });
 
     this.fcm.onTokenRefresh().subscribe(token => {
       console.log(token);
+      alert(token);
     });
-     
+    this.fcm.onTokenRefresh().subscribe(token => {
+      console.log("Token onTokenRefresh",token);
+      alert(token);
+    }); 
+
+    var self=this;
     this.fcm.onNotification().subscribe(data => {
       console.log(data);
+      alert(data);
       if (data.wasTapped) {
         console.log('Received in background');
-      //  this.router.navigate([data.landing_page, data.price]);
+        self.router.navigate([data.MyProfilePage]);
+       alert(data)
+     //  self.router.navigate(['/my-profile']);
       } else {
         console.log('Received in foreground');
-      //  this.router.navigate([data.landing_page, data.price]);
+        alert(data)
+       // self.router.navigate(['/my-profile']);
+       self.router.navigate([data.MyProfilePage]);
       }
     });
 

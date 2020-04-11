@@ -4,6 +4,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+
 const LNG_KEY='SELECTED_LANGUAGE'
 
 @Injectable({
@@ -16,7 +17,10 @@ export class ServicesService {
   userId:any;
   selected='';
 
-  constructor(public toastController:ToastController, private router:Router,private translate:TranslateService ) { } 
+  constructor(public toastController:ToastController, 
+              private router:Router,
+              private translate:TranslateService,
+              ) { } 
 
   
   isLoggedIn(): boolean {
@@ -72,11 +76,6 @@ export class ServicesService {
     this.translate.setDefaultLang(language);
     localStorage.getItem(LNG_KEY);
     return language;
-
-    // this.storage.get(LNG_KEY).then(val=>{
-    //   this.setLanguage(val);
-    //   this.selected=val;
-    // });
   }
  
   setLanguage(setLang) {
@@ -85,10 +84,5 @@ export class ServicesService {
     localStorage.setItem(LNG_KEY,setLang)
   }
 
-  // getLanguages(){
-  //   return[
-  //     {text:'English',value:'en'},
-  //     {text:'Marathi',value:'mr'}
-  //   ]
-  // }
+  
 }

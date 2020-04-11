@@ -4,7 +4,7 @@ import { ServicesService } from '../providers/services/services.service';
 import { IonInfiniteScroll, NavController, Platform } from '@ionic/angular';
 import { element } from 'protractor';
 import { Router } from '@angular/router';
-import { FCM } from '@ionic-native/fcm/ngx';
+// import { FCM } from '@ionic-native/fcm/ngx';
 
 @Component({
   selector: 'app-view-candidate',
@@ -29,27 +29,29 @@ export class ViewCandidatePage implements OnInit {
   limit = 10;
   candidateLists: any[] =[];
   constructor(private api:ApiService,private service:ServicesService, private nav:NavController, 
-              private router:Router,private fcm: FCM) {
+              private router:Router,
+              //private fcm: FCM
+      ) {
 
 
-    this.fcm.getToken().then(token => {
-      console.log(token);
-    });
+    // this.fcm.getToken().then(token => {
+    //   console.log(token);
+    // });
 
-    this.fcm.onTokenRefresh().subscribe(token => {
-      console.log(token);
-    });
+    // this.fcm.onTokenRefresh().subscribe(token => {
+    //   console.log(token);
+    // });
      
-    this.fcm.onNotification().subscribe(data => {
-      console.log(data);
-      if (data.wasTapped) {
-        console.log('Received in background');
-      //  this.router.navigate([data.landing_page, data.price]);
-      } else {
-        console.log('Received in foreground');
-      //  this.router.navigate([data.landing_page, data.price]);
-      }
-    });
+    // this.fcm.onNotification().subscribe(data => {
+    //   console.log(data);
+    //   if (data.wasTapped) {
+    //     console.log('Received in background');
+    //   //  this.router.navigate([data.landing_page, data.price]);
+    //   } else {
+    //     console.log('Received in foreground');
+    //   //  this.router.navigate([data.landing_page, data.price]);
+    //   }
+    // });
 
     this.getId=localStorage.getItem('id')
     console.log("Get ID...",JSON.parse(this.getId));

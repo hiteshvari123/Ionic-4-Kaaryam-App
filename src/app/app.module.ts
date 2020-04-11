@@ -17,7 +17,8 @@ import { Network } from '@ionic-native/network/ngx';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { FCM } from '@ionic-native/fcm/ngx';
+ import { FCM } from '@ionic-native/fcm/ngx';
+//import { Firebase } from '@ionic-native/firebase/ngx';
  
 export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -48,6 +49,7 @@ export function LanguageLoader(http: HttpClient) {
     ServicesService,
     ActiveGuard,
     Network,
+   // Firebase,
     FCM,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

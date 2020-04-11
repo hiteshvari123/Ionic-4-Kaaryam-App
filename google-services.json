@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:916210504041:android:75394e114446885cd2edf8",
+        "mobilesdk_app_id": "1:916210504041:android:71816062e4cd6199d2edf8",
         "android_client_info": {
-          "package_name": "io.ionic.margdarshak"
+          "package_name": "io.ionic.notificationDemo"
         }
       },
       "oauth_client": [
