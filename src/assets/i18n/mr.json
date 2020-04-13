@@ -118,12 +118,33 @@
         "Institute Name":"संस्थेचे नाव",
         "Course Duration":"कोर्स कालावधी"
     },
+    "course-details":{
+        "title":"अभ्यासक्रमाचे तपशील",
+        "Course Name":"अभ्यासक्रमाचे नाव",
+        "Institute Name":"संस्थेचे नाव",
+        "Institute Phone Number":"संस्था फोन क्रमांक",
+        "Location":"स्थान",
+        "Address":"पत्ता",
+        "Course duration":"अभ्यासक्रम कालावधी",
+        "Course Details":"अभ्यासक्रमाचे तपशील",
+        "Fees":"फी"
+    },
 
     "view-jobs":{
         "title":"नोकर्‍या",
         "No jobs available":"नोकर्‍या उपलब्ध नाहीत",
         "Qualification":"पात्रता",
         "Organisation Name":"संस्थेचे नाव"
+    },
+    "job-details":{
+        "title":"नोकरीचे तपशील",
+        "Job Name":"नोकरीचे नाव",
+        "Job Details":"नोकरीचे तपशील",
+        "Organisation Name":"संस्थेचे नाव",
+        "Qualification":"पात्रता",
+        "Salary":"पगार",
+        "Address":"पत्ता",
+        "Office time":"ऑफिस ची वेळ"
     },
 
     "about-us":{

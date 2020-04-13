@@ -152,16 +152,16 @@ export class AppComponent {
 
     this.fcm.getToken().then(token => {
       console.log("Token getToken",token);
-      alert(token);
+      // alert(token);
     });
 
     this.fcm.onTokenRefresh().subscribe(token => {
       console.log(token);
-      alert(token);
+      // alert(token);
     });
     this.fcm.onTokenRefresh().subscribe(token => {
       console.log("Token onTokenRefresh",token);
-      alert(token);
+      // alert(token);
     }); 
 
     var self=this;

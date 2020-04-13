@@ -27,5 +27,20 @@
       .continueText{
           color: #fff;
       }
-   
+
+    // .footerBackground{
+    //   // --ion-toolbar-background:#ff6c36e8;
+    //   --background: #ff0000;
+    //   text-align:center;
+    //   color: #fff;
+    // }
+    ion-toolbar{
+      --ion-toolbar-background:transparent;
+      text-align: center;
+      color: #fff;
+    }
+    ion-footer {
+      background: #ff0000;
+    }
+    
 }

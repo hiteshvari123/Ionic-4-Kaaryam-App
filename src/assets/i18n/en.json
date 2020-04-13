@@ -120,12 +120,33 @@
         "Institute Name":"Institute Name",
         "Course Duration":"Course Duration"
     },
+    "course-details":{
+        "title":"Course Details",
+        "Course Name":"Course Name",
+        "Institute Name":"Institute Name",
+        "Institute Phone Number":"Institute Phone Number",
+        "Location":"Location",
+        "Address":"Address",
+        "Course duration":"Course duration",
+        "Course Details":"Course Details",
+        "Fees":"Fees"
+    },
 
     "view-jobs":{
         "title":"Jobs",
         "No jobs available":"No jobs available",
         "Qualification":"Qualification",
         "Organisation Name":"Organisation Name"
+    },
+    "job-details":{
+        "title":"Job Details",
+        "Job Name":"Job Name",
+        "Job Details":"Job Details",
+        "Organisation Name":"Organisation Name",
+        "Qualification":"Qualification",
+        "Salary":"Salary",
+        "Address":"Address",
+        "Office time":"Office time"
     },
 
     "about-us":{
