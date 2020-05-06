@@ -8,9 +8,25 @@
 //     background-color: lightslategray;
 // }
 
+.cardBackground{
+    background: #d3d3d317;
+}
+.starColor{
+    color: red;
+}
+.fabBtn{
+    height: 50px;
+    width: 50px;
+    border-radius: 77px;
+    background: #00365A;
+    border: 0px;
+    color:#ffffff
+}
 ::ng-deep .mat-tab-label{
-    background-color: #00365A;
-    color:#ffffff;
+    // background-color: #00365A;
+    // color:#ffffff;
+    background-color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
     margin-right: 5px;
  }
  ::ng-deep .mat-tab-label-active{
@@ -51,6 +67,19 @@ button.btn.btn-primary.eduBtn{
         overflow-x:auto        
       }
 }
+table, th, td {
+    border: 0.55px solid #00000063 !important;
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ffffff;}
+
+table th {
+    background-color: #00365ab3;
+    color: white;
+    font-weight: 500;
+}
+
 .addBtnDiv{
     margin: 25px 0px;
 }

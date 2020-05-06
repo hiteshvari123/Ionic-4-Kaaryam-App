@@ -1874,7 +1874,8 @@ a.btn-secondary:not([href]):not([tabindex]) {
   }
 
   .navbar-left {
-    flex-basis: 40%;
+    // flex-basis: 40%;
+    flex-basis: 37%;
   }
   // @media screen and (max-width: 425px) and (min-width: 1024px) {
   //   .navbar-left {

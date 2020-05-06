@@ -37,11 +37,12 @@ export class UserProfileComponent implements OnInit {
   cdf_aboutSelf:any;
 
   eduLocalData:any;
+  educationArray:any=[]
 
-  educationArray :any= [
-    {collegeName:"Testing",degreeName:"BE",description:"Computer Engg",grade:"A"},
-    {collegeName:"ABC",degreeName:"MBA",description:"Testing",grade:"A"},
-  ];  
+  // educationArray :any= [
+  //   {collegeName:"Testing",degreeName:"BE",description:"Computer Engg",grade:"A"},
+  //   {collegeName:"ABC",degreeName:"MBA",description:"Testing",grade:"A"},
+  // ];  
   newEduData: any = {};
   isEditable:boolean=true;
   tableEduForm:FormGroup;
@@ -74,10 +75,10 @@ export class UserProfileComponent implements OnInit {
 
   ModeOfWork=[
     {id:1,name:"Select Mode of Work"},
-    {id:2,name:"Job"},
-    {id:3, name:"Self Employeed"},
-    {id:4,name:"Business"},
-    {id:5,name:"Entreprenuer"}
+    {id:2,value:"job",name:"Job"},
+    {id:3, value:"self employeed",name:"Self Employeed"},
+    {id:4,value:"Business1",name:"Business"},
+    {id:5,value:"Business2",name:"Entreprenuer"}
   ];
   IndustrySector=[
     {id:1,name:"Select Industry Sector"},
@@ -88,6 +89,18 @@ export class UserProfileComponent implements OnInit {
     {id:5,name:"Retail"},
     {id:6,name:"Servies"}
   ];  
+
+  myDocumentArray=[
+    {srNO:1, docName:"ID Card", status:"Received"},
+    {srNO:2, docName:"Certificate", status:"Received"},
+    {srNO:3, docName:"Visiting Card", status:"Received"},
+    {srNO:4, docName:"NDA Copy", status:"Received"},
+    {srNO:5, docName:"Child's Test", status:"Complete"},
+    {srNO:6, docName:"Child's Session", status:"Complete"},
+    {srNO:7, docName:"Spouse's Test", status:"Complete"},
+    {srNO:8, docName:"Number of Shadow Sessions", status:"2"},
+
+  ]
 
   constructor(
     private fb:FormBuilder,
@@ -115,6 +128,11 @@ export class UserProfileComponent implements OnInit {
         this.cdf_industrySector=data['industrySector'];
         this.cdf_aboutSelf=data['aboutSelf']
 
+      });
+
+      this.api.getCdfEducationData().subscribe(data=>{
+        console.log("Education Data....",data);
+        this.educationArray=data;
       })
   }
 
@@ -235,32 +253,35 @@ export class UserProfileComponent implements OnInit {
   addRow() {   
 
     console.log("Row index...")
-    this.newEduData = {collegeName: "", degreeName: "",description:"",grade:""};  
+    this.newEduData = {colleg: "", degree: "",description:"",grade:""};  
     this.educationArray.push(this.newEduData); 
       
     this.educationArray[this.educationArray.length - 1].isEditable = true;
-    console.log(this.educationArray);  
-    
-  }  
-  deleteRow(index) {  
-    if(this.educationArray.length ==1) {  
-      alert("Can't delete the row when there is only one row");  
-        return false;  
-    } else {  
-        this.educationArray.splice(index, 1);  
-        alert('Row deleted successfully',);  
-        return true;  
-    }  
+    console.log(this.educationArray);   
+  }
+  deleteRow(eduId) {  
+    console.log("Edu Id",eduId);
+    // if(this.educationArray.length ==1) {  
+    //   alert("Can't delete the row when there is only one row");  
+    //     return false;  
+    // } else {  
+    //     this.educationArray.splice(index, 1);  
+    //     alert('Row deleted successfully',);  
+    //     return true;  
+    // }  
   }
 
   saveRowData(data){
     console.log("Row Data.....",data,data.collegeName);
-    if(data.collegeName=="" || data.degreeName==""){
+    if(data.college=="" || data.degree==""){
       alert("Please fill up College Name and Degree Name")
     }
     else{
       // let arrayData={collegeName:data.collegeName,degreeName:data.degreeName,description:data.description,grade:data.grade}
       // this.educationArray.push(arrayData)
+      this.api.addEducation(data).subscribe(data=>{
+        console.log("Add Education api to save data...", data);
+      })
       data.isEditable=!data.isEditable
     }
   }

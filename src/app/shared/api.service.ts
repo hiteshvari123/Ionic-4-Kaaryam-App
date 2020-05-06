@@ -47,4 +47,35 @@ export class ApiService {
     return this.http.get(this.BASE_URL+'CDFProfile/'+userId,options)
    }
 
+   getCdfEducationData(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    let userId=localStorage.getItem("CDFUserId")
+    return this.http.get(this.BASE_URL+'CDFEducation/'+userId,options)
+   }
+
+   addEducation(data){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    let param={
+      college:data.college,
+      degree:data.degree,
+      description:data.description,
+      grade:data.grade,
+      uId:localStorage.getItem("CDFUserId")
+    }
+    return this.http.post(this.BASE_URL+'CDFEducation/Add',param,options);
+   }
 }

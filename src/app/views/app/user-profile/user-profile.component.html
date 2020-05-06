@@ -9,125 +9,164 @@
                 <mat-icon class="tab-icon">person</mat-icon>
                 Personal Details
               </ng-template>
-            <mat-card style="background: #d3d3d317;">
+            <mat-card class="cardBackground">
                 <!-- (ngSubmit)="onSubmit()" -->
-            <form [formGroup]="profileForm" novalidate>
-                <div class="row">
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" name="name" formControlName="firstName" [(ngModel)]="cdf_fname">
-                        <div *ngIf="profileForm.get('firstName').errors?.required && submitted" class="invalid-tooltip">Name is required!</div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" name="name" formControlName="lastName" [(ngModel)]="cdf_lname">
-                        <div *ngIf="profileForm.get('lastName').errors?.required && submitted" class="invalid-tooltip">Last Name is required!</div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Contact Number</label>
-                        <input type="text" class="form-control" name="name" formControlName="contactNo" [(ngModel)]="cdf_contactNo">
-                        <div *ngIf="profileForm.get('contactNo').errors?.required && submitted" class="invalid-tooltip">Contact No is required!</div>
-                        <div *ngIf="profileForm.get('contactNo').errors?.pattern && submitted" class="invalid-tooltip">Contact Number must be 10 digit!</div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Date Of Birth</label>
-                        <input type="date" class="form-control" name="name" formControlName="dob" [(ngModel)]="cdf_dob">
-                        <div *ngIf="profileForm.get('dob').errors?.required && submitted" class="invalid-tooltip">Date Of Birth is required!</div>    
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Address</label>
-                        <textarea class="form-control" rows="1" name="address" formControlName="address" [(ngModel)]="cdf_address"></textarea>
-                        <div *ngIf="profileForm.get('address').errors?.required && submitted" class="invalid-tooltip">Address is required!</div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>State</label>
-                        <select class="form-control" formControlName="selectState" [(ngModel)]="cdf_state">
-                            <option value="" disabled>Choose your State</option>
-                            <option>Maharashtra</option>
-                         </select>   
-                         <div *ngIf="profileForm.get('selectState').errors?.required && submitted" class="invalid-tooltip">State is required!</div> 
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>City</label>
-                        <select class="form-control" formControlName="selectCity" [(ngModel)]="cdf_city">
-                            <option value="" disabled>Choose your City</option>
-                            <option>Kolhapur</option>
-                            <option>Pune</option>
-                         </select>   
-                         <div *ngIf="profileForm.get('selectCity').errors?.required && submitted" class="invalid-tooltip">City is required!</div> 
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Pin Code</label>
-                        <input type="text" class="form-control" name="name" formControlName="pinCode" [(ngModel)]="cdf_pincode">
-                        <div *ngIf="profileForm.get('pinCode').errors?.required && submitted" class="invalid-tooltip">Pin Code No is required!</div>
-                        <div *ngIf="profileForm.get('pinCode').errors?.pattern && submitted" class="invalid-tooltip">Invalid Pin Code!</div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Gender</label>
-                        <select class="form-control" formControlName="selectGender" [(ngModel)]="cdf_gender" >
-                            <option value="" disabled>Select Gender</option>
-                            <!-- <option *ngFor="let arr of genderArray">{{arr.name}}</option> -->
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                         </select>   
-                         <div *ngIf="profileForm.get('selectGender').errors?.required && submitted" class="invalid-tooltip">Gender is required!</div> 
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Qualfication</label>
-                        <input class="form-control" rows="1" name="address" formControlName="qualification" [(ngModel)]="cdf_qualification">
-                        <!-- <div *ngIf="profileForm.get('qualification').errors?.required && submitted" class="invalid-tooltip">Qualification is required!</div> -->
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Designation</label>
-                        <input class="form-control" rows="1" name="address" formControlName="designation" [(ngModel)]="cdf_designation">
-                        <!-- <div *ngIf="profileForm.get('designation').errors?.required && submitted" class="invalid-tooltip">Qualification is required!</div> -->
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Total Year's of Experience</label>
-                        <select class="form-control" formControlName="selectExperience" [(ngModel)]="cdf_yearsOfExperience">
-                            <option value="" disabled>Select Year's of Experience</option>
-                            <option>0</option>
-                            <option>1</option>
-                         </select>   
-                         <!-- <div *ngIf="profileForm.get('selectExperience').errors?.required && submitted" class="invalid-tooltip">Gender is required!</div>  -->
-                    </div>
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Mode of Work</label>
-                        <select class="form-control" formControlName="selectModeOfWork" [(ngModel)]="cdf_modeOfWork">
-                            <option value="" disabled>Select Mode of Work</option>
-                            <option *ngFor="let work of ModeOfWork">{{work.name}}</option>
-                         </select>   
-                    </div>
-                    
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Field of Work</label>
-                        <select class="form-control" formControlName="selectFieldOfWork" [(ngModel)]="cdf_fieldOfWork">
-                            <option value="" disabled>Select Field of Work</option>
-                            <option *ngFor="let work of FieldOfWork">{{work.name}}</option>
-                         </select>   
-                    </div>
-                   
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Industry Sector</label>
-                        <select class="form-control" formControlName="selectIndustrySector" [(ngModel)]="cdf_industrySector">
-                            <option value="" disabled>Select Mode of Work</option>
-                            <option *ngFor="let sector of IndustrySector">{{sector.name}}</option>
-                         </select>   
-                    </div>
-
-                    <div class="col-12 col-lg-6 mb-4">
-                        <label>Description</label>
-                        <textarea class="form-control" rows="1" name="address" formControlName="description"  [(ngModel)]="cdf_aboutSelf" ></textarea>
-                        <!-- <div *ngIf="profileForm.get('address').errors?.required && submitted" class="invalid-tooltip">Address is required!</div> -->
-                    </div>
-
-                </div>
                 <div class="btnDiv">
                     <!-- <button class="btn btn-primary custmBtn" type="submit" >{{btnName}}</button> -->
                     <button *ngIf="disableProfileForm" class="btn btn-primary custmBtn" type="submit" (click)="clikedOnEdit()">Edit</button>
-                    <button *ngIf="!disableProfileForm" class="btn btn-primary custmBtn" type="submit"(click)="clikedOnUpdate()">Update</button>
+                    <button *ngIf="!disableProfileForm" class="btn btn-primary custmBtn" type="submit"(click)="clikedOnUpdate()">Update</button>  
+                    
+                    <button  mat-fab color="primary" class="fabBtn">
+                        <mat-icon>edit</mat-icon>
+                      </button>
                 </div>
+                <br>
+
+            <form [formGroup]="profileForm" novalidate>
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input type="text" class="form-control" name="name" formControlName="firstName" [(ngModel)]="cdf_fname">
+                            <span >First Name <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('firstName').errors?.required && submitted" class="invalid-tooltip">Name is required!</div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label  class="form-group has-float-label">
+                            <input type="text" class="form-control" name="name" formControlName="lastName" [(ngModel)]="cdf_lname">
+                            <span>Last Name <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('lastName').errors?.required && submitted" class="invalid-tooltip">Last Name is required!</div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input type="text" class="form-control" name="name" formControlName="contactNo" [(ngModel)]="cdf_contactNo">
+                            <span>Contact Number <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('contactNo').errors?.required && submitted" class="invalid-tooltip">Contact No is required!</div>
+                            <div *ngIf="profileForm.get('contactNo').errors?.pattern && submitted" class="invalid-tooltip">Contact Number must be 10 digit!</div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input type="date" class="form-control" name="name" formControlName="dob" [(ngModel)]="cdf_dob">
+                            <span>Date Of Birth <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('dob').errors?.required && submitted" class="invalid-tooltip">Date Of Birth is required!</div>    
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <textarea class="form-control" rows="1" name="address" formControlName="address" [(ngModel)]="cdf_address"></textarea>
+                            <span>Address <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('address').errors?.required && submitted" class="invalid-tooltip">Address is required!</div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectState" [(ngModel)]="cdf_state">
+                                <option value="" disabled>Choose your State</option>
+                                <option>Maharashtra</option>
+                            </select>   
+                            <span>State <span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('selectState').errors?.required && submitted" class="invalid-tooltip">State is required!</div> 
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectCity" [(ngModel)]="cdf_city">
+                                <option value="" disabled>Choose your City</option>
+                                <option>Kolhapur</option>
+                                <option>Pune</option>
+                            </select>   
+                            <span>City<span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('selectCity').errors?.required && submitted" class="invalid-tooltip">City is required!</div> 
+                        </label>  
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input type="text" class="form-control" name="name" formControlName="pinCode" [(ngModel)]="cdf_pincode">
+                            <span>Pin Code<span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('pinCode').errors?.required && submitted" class="invalid-tooltip">Pin Code No is required!</div>
+                            <div *ngIf="profileForm.get('pinCode').errors?.pattern && submitted" class="invalid-tooltip">Invalid Pin Code!</div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectGender" [(ngModel)]="cdf_gender" >
+                                <option value="" disabled>Select Gender</option>
+                                <!-- <option *ngFor="let arr of genderArray">{{arr.name}}</option> -->
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>   
+                            <span>Gender<span class="starColor">*</span></span>
+                            <div *ngIf="profileForm.get('selectGender').errors?.required && submitted" class="invalid-tooltip">Gender is required!</div> 
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input class="form-control" rows="1" name="address" formControlName="qualification" [(ngModel)]="cdf_qualification">
+                            <span>Qualfication</span>
+                            <!-- <div *ngIf="profileForm.get('qualification').errors?.required && submitted" class="invalid-tooltip">Qualification is required!</div> -->
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <input class="form-control" rows="1" name="address" formControlName="designation" [(ngModel)]="cdf_designation">
+                            <span>Designation</span>
+                            <!-- <div *ngIf="profileForm.get('designation').errors?.required && submitted" class="invalid-tooltip">Qualification is required!</div> -->
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectExperience" [(ngModel)]="cdf_yearsOfExperience">
+                                <option value="" disabled>Select Year's of Experience</option>
+                                <option>0</option>
+                                <option>1</option>
+                            </select>   
+                            <span>Total Year's of Experience</span>
+                            <!-- <div *ngIf="profileForm.get('selectExperience').errors?.required && submitted" class="invalid-tooltip">Gender is required!</div>  -->
+                        </label>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectModeOfWork" [(ngModel)]="cdf_modeOfWork">
+                                <option value="" disabled>Select Mode of Work</option>
+                                <option *ngFor="let work of ModeOfWork"  value="{{work.value}}">{{work.name}}</option>
+                            </select>
+                            <span>Mode of Work</span>   
+                         </label>
+                    </div>
+                    
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectFieldOfWork" [(ngModel)]="cdf_fieldOfWork">
+                                <option value="" disabled>Select Field of Work</option>
+                                <option *ngFor="let work of FieldOfWork">{{work.name}}</option>
+                            </select>   
+                            <span>Field of Work</span>
+                        </label>
+                    </div>
+                   
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <select class="form-control" formControlName="selectIndustrySector" [(ngModel)]="cdf_industrySector">
+                                <option value="" disabled>Select Mode of Work</option>
+                                <option *ngFor="let sector of IndustrySector">{{sector.name}}</option>
+                            </select> 
+                            <span>Industry Sector</span>
+                        </label>  
+                    </div>
+
+                    <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-group has-float-label">
+                            <textarea class="form-control" rows="1" name="address" formControlName="description"  [(ngModel)]="cdf_aboutSelf" ></textarea>
+                            <!-- <div *ngIf="profileForm.get('address').errors?.required && submitted" class="invalid-tooltip">Address is required!</div> -->
+                            <span>Description</span>
+                        </label>
+                    </div>
+
+                </div>
+                
             </form>
 
             </mat-card>  
@@ -138,7 +177,7 @@
                 <mat-icon class="tab-icon">school</mat-icon>
                 Education
               </ng-template>
-            <mat-card class="card-body">
+            <mat-card class="cardBackground">
 
                 <!-- <form [formGroup]="educationForm" novalidate>
                     <div class="row">
@@ -192,7 +231,7 @@
                         <tbody>    
                              <tr *ngFor="let data of educationArray; let i = index;">    
                                 <td class="actionCol"> 
-                                    <button mat-icon-button class="iconBtn" (click)="deleteRow(i)"><mat-icon class="deleteIcon">delete</mat-icon></button>
+                                    <button mat-icon-button class="iconBtn" (click)="deleteRow(data?.id,data.eduId)"><mat-icon class="deleteIcon">delete</mat-icon></button>
                                     <button mat-icon-button class="iconBtn" (click)="educationArray[i].isEditable=!educationArray[i].isEditable" *ngIf="!educationArray[i].isEditable"><mat-icon class="editIcon">create</mat-icon></button>
                                     <button mat-icon-button class="iconBtn" (click)="saveRowData(educationArray[i])" *ngIf="educationArray[i].isEditable"><mat-icon class="saveIcon">save</mat-icon></button>
                                     
@@ -206,16 +245,16 @@
                                 <input type="text" [(ngModel)]="educationArray[i].name">
                                 </div> -->
 
-                                  <input [(ngModel)]="educationArray[i].collegeName" class="form-control" type="text" [disabled]="!educationArray[i].isEditable" />    
+                                  <input [(ngModel)]="data.college" class="form-control" type="text" [disabled]="!educationArray[i].isEditable" />    
                                 </td>  
                                 <td>    
-                                  <input [(ngModel)]="educationArray[i].degreeName" class="form-control" type="text" [disabled]="!educationArray[i].isEditable" />    
+                                  <input [(ngModel)]="data.degree" class="form-control" type="text" [disabled]="!educationArray[i].isEditable" />    
                                 </td>    
                                 <td>    
-                                  <input [(ngModel)]="educationArray[i].description" class="form-control" type="text" [disabled]="!educationArray[i].isEditable"/>    
+                                  <input [(ngModel)]="data.description" class="form-control" type="text" [disabled]="!educationArray[i].isEditable"/>    
                                 </td>
                                 <td>    
-                                    <input [(ngModel)]="educationArray[i].grade" class="form-control" type="text" [disabled]="!educationArray[i].isEditable"/>    
+                                    <input [(ngModel)]="data.grade" class="form-control" type="text" [disabled]="!educationArray[i].isEditable"/>    
                                 </td>    
                             </tr>    
                               
@@ -232,13 +271,13 @@
                 Experience
               </ng-template>
 
-            <mat-card>
+            <mat-card class="cardBackground">
                 <div class="tableDiv">    
                     <div class="addBtnDiv">
 
-                        <label>Add Your LinkedIn Profile Link :</label>
+                        <label>Add Your LinkedIn Profile Link : </label>
                         <input type="text">
-
+                        <br>
                         <button class="btn btn-primary addBtn" (click)="addExperienceRow()">Add Experience</button>
                       </div>
                     <table class="table table-striped table-bordered">    
@@ -293,7 +332,73 @@
                 My Documents
               </ng-template>
 
-            <mat-card>My Documents Details </mat-card>
+            <mat-card class="cardBackground">My Documents Details 
+                <table class="table">
+                    <thead class="tableHead">
+                        <tr>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Document Name</th>
+                            <th scope="col">Status</th>           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="text-align: center;" *ngFor="let doc of myDocumentArray">
+                            <td>{{doc.srNO}}</td>
+                            <td>{{doc.docName}}</td>
+                            <td>{{doc.status}}</td>
+                        </tr>
+                                <!-- <tr>
+                                    <th scope="row">1</th>
+                                    <td>ID Card</td>
+                                    <td>Received</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Certificate</td>
+                                    <td>Received</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Visiting Card</td>
+                                    <td>Received</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>NDA Copy</td>
+                                    <td>Received</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Child's Test</td>
+                                    <td>Complete</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Child's Session</td>
+                                    <td>Complete</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Spouse's Test</td>
+                                    <td>Complete</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Number of Shadow Sessions</td>
+                                    <td>2</td>
+                                   
+                                </tr> -->
+                    </tbody>
+                </table>
+                 
+            </mat-card>
         </mat-tab>
 
         <mat-tab>
@@ -302,52 +407,52 @@
                 Bank Details
               </ng-template>
 
-            <mat-card>
-                <div class="example-container">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Input</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field appearance="fill">
-                      <mat-label>Textarea</mat-label>
-                      <textarea matInput></textarea>
-                    </mat-form-field>
-                  </div>
+            <mat-card class="cardBackground">
 
-                <!-- <form [formGroup]="bankDetailForm" novalidate (ngSubmit)="submitBankDetails()">
+                <br>
+                <form [formGroup]="bankDetailForm" novalidate (ngSubmit)="submitBankDetails()">
                     <div class="row">
                         <div class="col-12 col-lg-6 mb-4">
-                            <label>Account Holder Name</label>
-                            <input type="text" class="form-control" name="name" formControlName="accountHolderName">
-                            <div *ngIf="submittedBank && bankDetailForm.get('accountHolderName').errors?.required" class="invalid-tooltip">Account Holder Name is required!</div>
+                            <label class="form-group has-float-label">
+                                <input type="text" class="form-control" name="name" formControlName="accountHolderName">
+                                <span>Account Holder Name<span class="starColor">*</span></span>
+                                <div *ngIf="submittedBank && bankDetailForm.get('accountHolderName').errors?.required" class="invalid-tooltip">Account Holder Name is required!</div>
+                            </label>
                         </div>
                         <div class="col-12 col-lg-6 mb-4">
-                            <label>Account Number</label>
-                            <input type="text" class="form-control" name="name" formControlName="accountNo">
-                            <div *ngIf="submittedBank && bankDetailForm.get('accountNo').errors?.required" class="invalid-tooltip">Account Number is required!</div>
+                            <label class="form-group has-float-label">
+                                <input type="text" class="form-control" name="name" formControlName="accountNo">
+                                <span>Account Number<span class="starColor">*</span></span>
+                                <div *ngIf="submittedBank && bankDetailForm.get('accountNo').errors?.required" class="invalid-tooltip">Account Number is required!</div>
+                            </label>
                         </div>
                         <div class="col-12 col-lg-6 mb-4">
-                            <label>Bank Name</label>
-                            <input type="text" class="form-control" name="name" formControlName="bankName">
-                            <div *ngIf="submittedBank && bankDetailForm.get('bankName').errors?.required" class="invalid-tooltip">Bank Name is required!</div>
+                            <label class="form-group has-float-label">
+                                <input type="text" class="form-control" name="name" formControlName="bankName">
+                                <span>Bank Name<span class="starColor">*</span></span>
+                                <div *ngIf="submittedBank && bankDetailForm.get('bankName').errors?.required" class="invalid-tooltip">Bank Name is required!</div>
+                            </label>
                         </div>
                         <div class="col-12 col-lg-6 mb-4">
-                            <label>Branch Name</label>
-                            <input type="text" class="form-control" name="name" formControlName="branchName">
-                            <div *ngIf="submittedBank && bankDetailForm.get('branchName').errors?.required" class="invalid-tooltip">Branch Name is required!</div>
+                            <label class="form-group has-float-label">
+                                <input type="text" class="form-control" name="name" formControlName="branchName">
+                                <span>Branch Name<span class="starColor">*</span></span>
+                                <div *ngIf="submittedBank && bankDetailForm.get('branchName').errors?.required" class="invalid-tooltip">Branch Name is required!</div>
+                            </label>
                         </div>
                         <div class="col-12 col-lg-6 mb-4">
-                            <label>IFSC Code</label>
-                            <input type="text" class="form-control" name="name" formControlName="ifscCode">
-                            <div *ngIf="submittedBank && bankDetailForm.get('ifscCode').errors?.required" class="invalid-tooltip">IFSC Code is required!</div>
+                            <label class="form-group has-float-label">
+                                <input type="text" class="form-control" name="name" formControlName="ifscCode">
+                                <span>IFSC Code<span class="starColor">*</span></span>
+                                <div *ngIf="submittedBank && bankDetailForm.get('ifscCode').errors?.required" class="invalid-tooltip">IFSC Code is required!</div>
+                            </label>
                         </div>
                     </div>
 
                     <div class="educationBtnDiv">
                         <button class="btn btn-primary eduBtn" type="submit" >Save</button>
                     </div>
-                </form> -->
+                </form>
 
             </mat-card>
         </mat-tab>
