@@ -15,12 +15,12 @@
     color: red;
 }
 .fabBtn{
-    height: 50px;
-    width: 50px;
-    border-radius: 77px;
+    border-radius: 5px;
     background: #00365A;
-    border: 0px;
-    color:#ffffff
+    color:#ffffff;
+}
+.editAndsaveIcon{
+    margin-top: 5px;
 }
 ::ng-deep .mat-tab-label{
     // background-color: #00365A;

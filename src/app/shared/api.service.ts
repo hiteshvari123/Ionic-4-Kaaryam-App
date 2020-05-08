@@ -78,4 +78,38 @@ export class ApiService {
     }
     return this.http.post(this.BASE_URL+'CDFEducation/Add',param,options);
    }
+
+   updateEducationData(data){
+      const httpHeaders = new HttpHeaders({
+        'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+        'Content-Type': 'application/json;charset=utf-8',
+        'Accept':'application/json'
+      });
+      const options = {
+          headers: httpHeaders
+      };
+      let param={
+        college:data.college,
+        degree:data.degree,
+        description:data.description,
+        grade:data.grade,
+      }
+      let userId=localStorage.getItem("CDFUserId");
+      return this.http.put(this.BASE_URL+'CDFEducation/Update?id='+userId+'&eduId='+data.eduId,param,options)
+    //  https://www.dheya.com/testing/api/CDFEducation/Update?id=374&eduId=1233
+   }
+
+   deleteEducation(eduId){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    let userId=localStorage.getItem("CDFUserId")
+    return this.http.delete(this.BASE_URL+'CDFEducation/Delete?id='+userId+'&eduId='+eduId,options)
+   // https://www.dheya.com/testing/api/CDFEducation/Delete?id=374&eduId=1233
+   }
 }
