@@ -8,9 +8,10 @@
 //     background-color: lightslategray;
 // }
 
-.cardBackground{
-    background: #d3d3d317;
-}
+
+// .cardBackground{
+//     background: #d3d3d317;
+// }
 .starColor{
     color: red;
 }
@@ -23,14 +24,17 @@
     margin-top: 5px;
 }
 ::ng-deep .mat-tab-label{
-    // background-color: #00365A;
-    // color:#ffffff;
-    background-color: rgba(0, 0, 0, 0.87);
-    color: #ffffff;
+    background-color: #00365A;
+    color:#ffffff;
+    // background-color: rgba(0, 0, 0, 0.87);
+    // color: #ffffff;
     margin-right: 5px;
+
+    border-top-right-radius:8px;
+    border-top-left-radius: 8px;
  }
  ::ng-deep .mat-tab-label-active{
-    background-color: #d3d3d317;//#d3d3d382;
+    background-color: #ffffff;//#d3d3d317;//#d3d3d382;
     color:#00365A;
 
     border-top: 0.55px solid #202020;
@@ -70,9 +74,10 @@ button.btn.btn-primary.eduBtn{
 table, th, td {
     border: 0.55px solid #00000063 !important;
 }
-table tr:nth-child(even){background-color: #f2f2f2;}
 
-table tr:hover {background-color: #ffffff;}
+//table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #f3f3f3;}
 
 table th {
     background-color: #00365ab3;

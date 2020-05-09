@@ -11,7 +11,7 @@ export class ApiService {
   // BASE_URL="https://www.dheya.com/MyClapAPI/api/";
   // apitoken='apitoken:MyClapDheya@2017:DheyaApi@20177';
 
-  BASE_URL="https://www.dheya.com/testing/api/";
+  BASE_URL="https://www.dheya.com/cdf2020api/api/";
   apitoken='';
 
   // https://www.dheya.com/testing/api/UserLogin/GetUserLoginNew?userName=rahul.patil284@gmail.com&password=cdf@8411
@@ -38,7 +38,10 @@ export class ApiService {
     const httpHeaders = new HttpHeaders({
       'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
       'Content-Type': 'application/json;charset=utf-8',
-      'Accept':'application/json'
+      'Accept':'application/json',
+      // 'Access-Control-Allow-Headers': 'Content-Type',
+      // 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      // 'Access-Control-Allow-Origin': '*'
     });
     const options = {
         headers: httpHeaders
@@ -58,6 +61,42 @@ export class ApiService {
     };
     let userId=localStorage.getItem("CDFUserId")
     return this.http.get(this.BASE_URL+'CDFEducation/'+userId,options)
+   }
+
+   getFieldOfWork(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    return this.http.get(this.BASE_URL+'CDFProfile/GetFieldOfWork',options);
+   }
+   
+   getYearsOfExp(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    return this.http.get(this.BASE_URL+'CDFProfile/GetYearOfExperience',options);
+   }
+   
+   getIndustrySector(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    return this.http.get(this.BASE_URL+'CDFProfile/IndustrySector',options);
    }
 
    addEducation(data){

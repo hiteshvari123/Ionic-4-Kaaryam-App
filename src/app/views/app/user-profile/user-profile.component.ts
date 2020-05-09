@@ -67,13 +67,9 @@ export class UserProfileComponent implements OnInit {
     { name: "Female" },
     { name: "Other" }
   ]
-  FieldOfWork = [
-    { id: 1, name: "Select Field of Work" },
-    { id: 2, name: "Engineering" },
-    { id: 3, name: "Fine Art" },
-    { id: 4, name: "Health & Medicine" },
-    { id: 5, name: "Hospitality" }
-  ];
+  FieldOfWork:any=[];
+  yearsOfExp:any=[];
+  IndustrySector:any=[];
 
   ModeOfWork = [
     { id: 1, name: "Select Mode of Work" },
@@ -82,15 +78,15 @@ export class UserProfileComponent implements OnInit {
     { id: 4, value: "Business1", name: "Business" },
     { id: 5, value: "Business2", name: "Entreprenuer" }
   ];
-  IndustrySector = [
-    { id: 1, name: "Select Industry Sector" },
-    { id: 2, name: "Agriculture" },
-    { id: 3, name: "Defence" },
-    { id: 4, name: "Information Technology" },
-    { id: 4, name: "Real Estate" },
-    { id: 5, name: "Retail" },
-    { id: 6, name: "Servies" }
-  ];
+  // IndustrySector = [
+  //   { id: 1, name: "Select Industry Sector" },
+  //   { id: 2, name: "Agriculture" },
+  //   { id: 3, name: "Defence" },
+  //   { id: 4, name: "Information Technology" },
+  //   { id: 4, name: "Real Estate" },
+  //   { id: 5, name: "Retail" },
+  //   { id: 6, name: "Servies" }
+  // ];
 
   myDocumentArray = [
     { srNO: 1, docName: "ID Card", status: "Received" },
@@ -132,12 +128,33 @@ export class UserProfileComponent implements OnInit {
 
     });
     this.getAllEduData();
+    this.getFieldOfWork();
+    this.getYearsOfExp();
+    this.getIndustrySector();
     
   }
   getAllEduData(){
     this.api.getCdfEducationData().subscribe(data => {
       console.log("Education Data....", data);
       this.educationArray = data;
+    })
+  }
+
+  getFieldOfWork(){
+    this.api.getFieldOfWork().subscribe(data=>{
+      console.log("Get Field of Work Data...",data);
+      this.FieldOfWork=data;
+    })
+  }
+  getYearsOfExp(){
+    this.api.getYearsOfExp().subscribe(data=>{
+      console.log("Get Years of Exp....",data);
+      this.yearsOfExp=data;
+    })
+  }
+  getIndustrySector(){
+    this.api.getIndustrySector().subscribe(data=>{
+      console.log("get Industry Sector....",data);
     })
   }
 
@@ -289,7 +306,7 @@ export class UserProfileComponent implements OnInit {
           this.api.addEducation(data).subscribe(data => {
             console.log("Add Education api to save data...", data);
             alert(data);
-            this.getAllEduData()
+            this.getAllEduData();
           })
         } 
         data.isEditable = !data.isEditable
