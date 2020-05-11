@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { Location } from "@angular/common";
+import { Subject, BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: "root"
 })
@@ -30,5 +32,13 @@ export class UserService {
      else {
       return false;
     }
+  }
+
+  private profile = new BehaviorSubject(" ")
+  profileData = this.profile.asObservable();
+  profileDetails(data: any) {
+    this.profile.next(data);
+    console.log("in Service....",data);
+  //  localStorage.setItem('pinCode',data.pinCode);
   }
 }

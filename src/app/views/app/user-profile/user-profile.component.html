@@ -1,4 +1,8 @@
 <h4>My Profile</h4>
+<div class="profilePicDiv">
+    <img alt="Profile Picture" class="profilePicture" src="/assets/img/profile-pic-l.jpg"/>
+    <div class="centered">Change Picture</div>
+</div>
 
 <!-- animationDuration="0ms" => disable the effect of ripple -->
 
@@ -332,7 +336,7 @@
                     <div class="addBtnDiv">
 
                         <label>Add Your LinkedIn Profile Link : </label> &nbsp;
-                        <input type="text" style="border: none; border-bottom:1px solid #21252994;">
+                        <input type="text" style="border: none; border-bottom:1px solid #21252994;width: 30%;">
                         <br>
                         <button class="btn btn-primary addBtn" (click)="addExperienceRow()">Add Experience</button>
                     </div>
@@ -367,7 +371,7 @@
                                 </td>
                                 <td>
                                     <input style="border: none; border-bottom:1px solid #21252994;"
-                                        [(ngModel)]="experienceArray[i].companyName" class="form-control" type="text"
+                                        [(ngModel)]="experienceArray[i].company" class="form-control" type="text"
                                         [disabled]="!experienceArray[i].isEditableExperiece" />
                                 </td>
                                 <td>
@@ -377,12 +381,12 @@
                                 </td>
                                 <td>
                                     <input style="border: none; border-bottom:1px solid #21252994;"
-                                        [(ngModel)]="experienceArray[i].jobStartDate" class="form-control" type="date"
+                                        [(ngModel)]="experienceArray[i].job_start_date" class="form-control" type="date"
                                         [disabled]="!experienceArray[i].isEditableExperiece" />
                                 </td>
                                 <td>
                                     <input style="border: none; border-bottom:1px solid #21252994;"
-                                        [(ngModel)]="experienceArray[i].jobEndDate" class="form-control" type="date"
+                                        [(ngModel)]="experienceArray[i].job_end_date" class="form-control" type="date"
                                         [disabled]="!experienceArray[i].isEditableExperiece" />
                                 </td>
                                 <td>
@@ -392,7 +396,7 @@
                                 </td>
                                 <td>
                                     <textarea style="border: none; border-bottom:1px solid #21252994;"
-                                        [(ngModel)]="experienceArray[i].jobDescription" class="form-control" type="text"
+                                        [(ngModel)]="experienceArray[i].position_discription" class="form-control" type="text"
                                         [disabled]="!experienceArray[i].isEditableExperiece"></textarea>
                                 </td>
                             </tr>

@@ -50,19 +50,6 @@ export class ApiService {
     return this.http.get(this.BASE_URL+'CDFProfile/'+userId,options)
    }
 
-   getCdfEducationData(){
-    const httpHeaders = new HttpHeaders({
-      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
-      'Content-Type': 'application/json;charset=utf-8',
-      'Accept':'application/json'
-    });
-    const options = {
-        headers: httpHeaders
-    };
-    let userId=localStorage.getItem("CDFUserId")
-    return this.http.get(this.BASE_URL+'CDFEducation/'+userId,options)
-   }
-
    getFieldOfWork(){
     const httpHeaders = new HttpHeaders({
       'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
@@ -97,6 +84,19 @@ export class ApiService {
         headers: httpHeaders
     };
     return this.http.get(this.BASE_URL+'CDFProfile/IndustrySector',options);
+   }
+
+   getCdfEducationData(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    let userId=localStorage.getItem("CDFUserId")
+    return this.http.get(this.BASE_URL+'CDFEducation/'+userId,options)
    }
 
    addEducation(data){
@@ -134,9 +134,7 @@ export class ApiService {
         grade:data.grade,
       }
       let userId=localStorage.getItem("CDFUserId");
-      return this.http.put(this.BASE_URL+'CDFEducation/Update?id='+userId+'&eduId='+data.eduId,param,options)
-    //  https://www.dheya.com/testing/api/CDFEducation/Update?id=374&eduId=1233
-   }
+      return this.http.put(this.BASE_URL+'CDFEducation/Update?id='+userId+'&eduId='+data.eduId,param,options);   }
 
    deleteEducation(eduId){
     const httpHeaders = new HttpHeaders({
@@ -149,6 +147,18 @@ export class ApiService {
     };
     let userId=localStorage.getItem("CDFUserId")
     return this.http.delete(this.BASE_URL+'CDFEducation/Delete?id='+userId+'&eduId='+eduId,options)
-   // https://www.dheya.com/testing/api/CDFEducation/Delete?id=374&eduId=1233
+   }
+
+   getCdfExperience(){
+    const httpHeaders = new HttpHeaders({
+      'AuthToken': 'CDFDashboard@2018:DheyaApi@2018',
+      'Content-Type': 'application/json;charset=utf-8',
+      'Accept':'application/json'
+    });
+    const options = {
+        headers: httpHeaders
+    };
+    let userId=localStorage.getItem("CDFUserId")
+    return this.http.get(this.BASE_URL+'CDFExperience/'+userId,options)
    }
 }

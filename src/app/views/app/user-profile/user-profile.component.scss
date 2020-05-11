@@ -12,6 +12,29 @@
 // .cardBackground{
 //     background: #d3d3d317;
 // }
+.profilePicDiv{
+    margin-bottom: 20px;
+}
+.profilePicture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.centered {
+    position: absolute;
+    top: 73px;
+    left: 59px;
+    font-size: 13px;
+    font-weight: 500;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-7%, 14%);
+    color: white;
+    width: 94px;
+    padding: 6px 0px;
+    background: #2125292b;
+    cursor: pointer;
+}
 .starColor{
     color: red;
 }

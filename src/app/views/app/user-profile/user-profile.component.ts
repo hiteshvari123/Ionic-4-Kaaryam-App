@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from 'src/app/shared/api.service';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -52,10 +53,11 @@ export class UserProfileComponent implements OnInit {
   enableEdit = false;
   enableEditIndex = null;
 
-  experienceArray: any = [
-    { companyName: "ABC", position: "Developer", jobStartDate: 1 / 2 / 2020, jobEndDate: "1/2/2020", location: "Pune", jobDescription: "Testing" },
-    { companyName: "XYZ", position: "Testing", jobStartDate: "1/2/2020", jobEndDate: "1/2/2020", location: "Kolhapur", jobDescription: "Testing" },
-  ];
+  experienceArray:any=[];
+  // experienceArray: any = [
+  //   { companyName: "ABC", position: "Developer", jobStartDate: 1 / 2 / 2020, jobEndDate: "1/2/2020", location: "Pune", jobDescription: "Testing" },
+  //   { companyName: "XYZ", position: "Testing", jobStartDate: "1/2/2020", jobEndDate: "1/2/2020", location: "Kolhapur", jobDescription: "Testing" },
+  // ];
   isEditableExperiece: boolean = true;
   newExperienceData: any = {};
 
@@ -102,41 +104,55 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private api: ApiService
+    private api: ApiService,
+    private userService:UserService
   ) {
-    this.api.getCdfProfile().subscribe(data => {
-      console.log("CDF Profile...", data);
-      this.cdfProfileData = data;
-      this.cdf_fname = data['fname'];
-      this.cdf_lname = data['lname'];
-      this.cdf_contactNo = data['contactNo'];
-      let dateData = data['dob']
-      this.cdf_dob = dateData.substring(0, 10);
-      console.log("Date.....", this.cdf_dob);
-      this.cdf_address = data['address'];
-      this.cdf_state = data['state'];
-      this.cdf_city = data['city'];
-      this.cdf_pincode = data['pincode'];
-      this.cdf_gender = data['gender'];
-      this.cdf_qualification = data['qualification'];
-      this.cdf_designation = data['designation'];
-      this.cdf_yearsOfExperience = data['yearsOfExperience'];
-      this.cdf_modeOfWork = data['modeOfWork'];
-      this.cdf_fieldOfWork = data['fieldOfWork'];
-      this.cdf_industrySector = data['industrySector'];
-      this.cdf_aboutSelf = data['aboutSelf']
-
-    });
+    // this.api.getCdfProfile().subscribe(data => {
+      this.userService.profileData.subscribe(data=>{     
+        console.log("CDF Profile On profile page...", data);
+        this.cdfProfileData = data;
+        this.cdf_fname = data['fname'];
+        this.cdf_lname = data['lname'];
+        this.cdf_contactNo = data['contactNo'];
+        let dateData = data['dob']
+        this.cdf_dob = dateData.substring(0, 10);
+        console.log("Date.....", this.cdf_dob);
+        this.cdf_address = data['address'];
+        this.cdf_state = data['state'];
+        this.cdf_city = data['city'];
+        this.cdf_pincode = data['pincode'];
+        this.cdf_gender = data['gender'];
+        this.cdf_qualification = data['qualification'];
+        this.cdf_designation = data['designation'];
+        this.cdf_yearsOfExperience = data['yearsOfExperience'];
+        this.cdf_modeOfWork = data['modeOfWork'];
+        this.cdf_fieldOfWork = data['fieldOfWork'];
+        this.cdf_industrySector = data['industrySector'];
+        this.cdf_aboutSelf = data['aboutSelf']
+      });
+   // });
     this.getAllEduData();
     this.getFieldOfWork();
     this.getYearsOfExp();
     this.getIndustrySector();
+
+    this.getAllExperience();
     
   }
+
+
   getAllEduData(){
     this.api.getCdfEducationData().subscribe(data => {
       console.log("Education Data....", data);
       this.educationArray = data;
+    })
+  }
+
+  getAllExperience(){
+    this.api.getCdfExperience().subscribe(data=>{
+      console.log("Experiencce Data...",data);
+      this.experienceArray=data
+      console.log("Joining Date...",data['job_start_date'])
     })
   }
 
